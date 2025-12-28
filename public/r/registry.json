@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "fly-by",
-  "homepage": "https://fly-by.example.com",
+  "homepage": "https://yukyui.vercel.app/",
   "items": [
     {
       "name": "fb-button",
@@ -96,7 +96,14 @@
       "title": "Example Form",
       "description": "fly-byスタイルのお問い合わせフォーム。Zod validationを使用。",
       "dependencies": ["zod"],
-      "registryDependencies": ["fb-button", "fb-input", "fb-label", "fb-textarea", "fb-card", "fb-text"],
+      "registryDependencies": [
+        "fb-button",
+        "fb-input",
+        "fb-label",
+        "fb-textarea",
+        "fb-card",
+        "fb-text"
+      ],
       "files": [
         {
           "path": "registry/fly-by/blocks/example-form/example-form.tsx",
