@@ -1,80 +1,132 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "acme",
-  "homepage": "https://acme.com",
+  "name": "fly-by",
+  "homepage": "https://fly-by.example.com",
   "items": [
     {
-      "name": "hello-world",
-      "type": "registry:component",
-      "title": "Hello World",
-      "description": "A simple hello world component",
-      "registryDependencies": ["button"],
+      "name": "fb-button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "fly-byデザインシステムのButtonコンポーネント。-appearance-solid/outlined/flat/transparent、-color-informative/positive/negative/neutral、-size-xs/s/m/l/xlをサポート。",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
-          "path": "registry/new-york/blocks/hello-world/hello-world.tsx",
+          "path": "registry/fly-by/ui/fb-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fb-card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "fly-byデザインシステムのCardコンポーネント。-elevation-0/1/2/3をサポート。_header, _body, _footerスロットを含む。",
+      "files": [
+        {
+          "path": "registry/fly-by/ui/fb-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fb-input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "fly-byデザインシステムのInputコンポーネント。-appearance-outlined/filled、-size-s/m/lをサポート。",
+      "files": [
+        {
+          "path": "registry/fly-by/ui/fb-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fb-label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "fly-byデザインシステムのLabelコンポーネント。フォームフィールドのラベルに使用。",
+      "dependencies": ["@radix-ui/react-label"],
+      "files": [
+        {
+          "path": "registry/fly-by/ui/fb-label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fb-textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "fly-byデザインシステムのTextareaコンポーネント。複数行テキスト入力に使用。",
+      "files": [
+        {
+          "path": "registry/fly-by/ui/fb-textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fb-text",
+      "type": "registry:ui",
+      "title": "Text",
+      "description": "fly-byデザインシステムのTextコンポーネント。-level-xxs/xs/s/m/l/xl/xxl/xxxl、-density-dense/normal/looseをサポート。",
+      "files": [
+        {
+          "path": "registry/fly-by/ui/fb-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hello-world",
+      "type": "registry:block",
+      "title": "Hello World",
+      "description": "fly-byスタイルのシンプルなHello Worldコンポーネント",
+      "registryDependencies": ["fb-button", "fb-text"],
+      "files": [
+        {
+          "path": "registry/fly-by/blocks/hello-world/hello-world.tsx",
           "type": "registry:component"
         }
       ]
     },
     {
       "name": "example-form",
-      "type": "registry:component",
+      "type": "registry:block",
       "title": "Example Form",
-      "description": "A contact form with Zod validation.",
+      "description": "fly-byスタイルのお問い合わせフォーム。Zod validationを使用。",
       "dependencies": ["zod"],
-      "registryDependencies": ["button", "input", "label", "textarea", "card"],
+      "registryDependencies": ["fb-button", "fb-input", "fb-label", "fb-textarea", "fb-card", "fb-text"],
       "files": [
         {
-          "path": "registry/new-york/blocks/example-form/example-form.tsx",
+          "path": "registry/fly-by/blocks/example-form/example-form.tsx",
           "type": "registry:component"
         }
       ]
     },
     {
-      "name": "complex-component",
-      "type": "registry:component",
-      "title": "Complex Component",
-      "description": "A complex component showing hooks, libs and components.",
-      "registryDependencies": ["card"],
+      "name": "example-login",
+      "type": "registry:block",
+      "title": "Example Login",
+      "description": "fly-byスタイルのログインフォーム。CSSファイル付き。",
       "files": [
         {
-          "path": "registry/new-york/blocks/complex-component/page.tsx",
-          "type": "registry:page",
-          "target": "app/pokemon/page.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/components/pokemon-card.tsx",
+          "path": "registry/fly-by/blocks/example-login/example-login.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/complex-component/components/pokemon-image.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/lib/pokemon.ts",
-          "type": "registry:lib"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/hooks/use-pokemon.ts",
-          "type": "registry:hook"
+          "path": "registry/fly-by/blocks/example-login/example-login.css",
+          "type": "registry:file"
         }
-      ]
-    },
-    {
-      "name": "example-with-css",
-      "type": "registry:component",
-      "title": "Example with CSS",
-      "description": "A login form with a CSS file.",
-      "files": [
-        {
-          "path": "registry/new-york/blocks/example-with-css/example-card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/blocks/example-with-css/example-card.css",
-          "type": "registry:component"
+      ],
+      "cssVars": {
+        "theme": {
+          "--fb-deep-blue-50": "#e8f0fe",
+          "--fb-deep-blue-500": "#1a365d",
+          "--fb-deep-blue-600": "#153e75",
+          "--fb-deep-blue-700": "#1e4a8a"
         }
-      ]
+      }
     }
   ]
 }

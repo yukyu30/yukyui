@@ -1,0 +1,154 @@
+/* fly-by Design System - Login Card Styles */
+/* Yukyu Flavor: #002CED as primary color */
+
+.fb-login-container {
+  /* Yukyu Flavor Colors */
+  --fb-primary-50: #e6ebfd;
+  --fb-primary-100: #ccd7fb;
+  --fb-primary-500: #002CED;
+  --fb-primary-600: #0025c4;
+  --fb-primary-700: #001e9b;
+
+  /* Semantic Colors */
+  --fb-primary-color: var(--fb-primary-500);
+  --fb-primary-hover: var(--fb-primary-600);
+  --fb-primary-light: var(--fb-primary-50);
+  --fb-error-color: #ef4444;
+  --fb-text-color: #1f2937;
+  --fb-text-light: #6b7280;
+  --fb-border-color: #e5e7eb;
+  --fb-background-light: #f9fafb;
+  --fb-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  /* Spacing (4px grid) */
+  --fb-space-xxs: 4px;
+  --fb-space-xs: 8px;
+  --fb-space-s: 12px;
+  --fb-space-m: 16px;
+  --fb-space-l: 24px;
+  --fb-space-xl: 32px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--fb-space-m);
+  background-color: var(--fb-background-light);
+  width: 100%;
+}
+
+.fb-login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: var(--fb-space-xl);
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: var(--fb-card-shadow);
+}
+
+.fb-login-title {
+  margin: 0 0 var(--fb-space-xs) 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--fb-text-color);
+}
+
+.fb-login-subtitle {
+  margin: 0 0 var(--fb-space-l) 0;
+  font-size: 0.875rem;
+  color: var(--fb-text-light);
+}
+
+.fb-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fb-space-m);
+}
+
+.fb-login-error {
+  padding: var(--fb-space-s);
+  margin-bottom: var(--fb-space-xs);
+  background-color: rgba(239, 68, 68, 0.1);
+  border-left: 3px solid var(--fb-error-color);
+  color: var(--fb-error-color);
+  font-size: 0.875rem;
+  border-radius: 4px;
+}
+
+.fb-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fb-space-xs);
+}
+
+.fb-form-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--fb-text-color);
+}
+
+.fb-form-group input {
+  padding: var(--fb-space-s);
+  border: 1px solid var(--fb-border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.fb-form-group input:focus {
+  outline: none;
+  border-color: var(--fb-primary-color);
+  box-shadow: 0 0 0 3px var(--fb-primary-light);
+}
+
+.fb-form-group input::placeholder {
+  color: var(--fb-text-light);
+}
+
+.fb-form-actions {
+  margin-top: var(--fb-space-xs);
+}
+
+.fb-login-button {
+  width: 100%;
+  padding: var(--fb-space-s);
+  background-color: var(--fb-primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.fb-login-button:hover {
+  background-color: var(--fb-primary-hover);
+}
+
+.fb-login-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--fb-primary-light);
+}
+
+.fb-form-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--fb-space-m);
+}
+
+.fb-forgot-password {
+  font-size: 0.875rem;
+  color: var(--fb-primary-color);
+  text-decoration: none;
+}
+
+.fb-forgot-password:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .fb-login-card {
+    padding: var(--fb-space-l);
+  }
+}

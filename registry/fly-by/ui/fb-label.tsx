@@ -5,15 +5,22 @@ import * as LabelPrimitive from "@radix-ui/react-label"
 
 import { cn } from "@/lib/utils"
 
-function Label({
+/**
+ * fly-by Label
+ *
+ * フォームフィールドのラベルに使用
+ */
+
+function FbLabel({
   className,
   ...props
 }: React.ComponentProps<typeof LabelPrimitive.Root>) {
   return (
     <LabelPrimitive.Root
-      data-slot="label"
+      data-slot="fb-label"
       className={cn(
-        "flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50",
+        "fb-label text-sm font-medium text-gray-700 dark:text-gray-300 select-none",
+        "peer-disabled:cursor-not-allowed peer-disabled:opacity-50",
         className
       )}
       {...props}
@@ -21,4 +28,4 @@ function Label({
   )
 }
 
-export { Label }
+export { FbLabel }
