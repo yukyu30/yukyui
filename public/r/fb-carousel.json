@@ -8,7 +8,7 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "fb-button"
+    "https://fly-by.design.yukyu.net/r/fb-button.json"
   ],
   "files": [
     {

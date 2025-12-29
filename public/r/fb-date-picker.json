@@ -8,9 +8,9 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "fb-button",
-    "fb-calendar",
-    "fb-popover"
+    "https://fly-by.design.yukyu.net/r/fb-button.json",
+    "https://fly-by.design.yukyu.net/r/fb-calendar.json",
+    "https://fly-by.design.yukyu.net/r/fb-popover.json"
   ],
   "files": [
     {

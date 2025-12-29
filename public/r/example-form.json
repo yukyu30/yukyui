@@ -7,12 +7,12 @@
     "zod"
   ],
   "registryDependencies": [
-    "fb-button",
-    "fb-input",
-    "fb-label",
-    "fb-textarea",
-    "fb-card",
-    "fb-text"
+    "https://fly-by.design.yukyu.net/r/fb-button.json",
+    "https://fly-by.design.yukyu.net/r/fb-input.json",
+    "https://fly-by.design.yukyu.net/r/fb-label.json",
+    "https://fly-by.design.yukyu.net/r/fb-textarea.json",
+    "https://fly-by.design.yukyu.net/r/fb-card.json",
+    "https://fly-by.design.yukyu.net/r/fb-text.json"
   ],
   "files": [
     {

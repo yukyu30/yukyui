@@ -9,7 +9,7 @@
     "react-hook-form"
   ],
   "registryDependencies": [
-    "fb-label"
+    "https://fly-by.design.yukyu.net/r/fb-label.json"
   ],
   "files": [
     {

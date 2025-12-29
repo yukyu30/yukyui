@@ -8,7 +8,7 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "fb-dialog"
+    "https://fly-by.design.yukyu.net/r/fb-dialog.json"
   ],
   "files": [
     {

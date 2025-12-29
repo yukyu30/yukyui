@@ -8,7 +8,10 @@
       "type": "registry:ui",
       "title": "Button",
       "description": "fly-byデザインシステムのButtonコンポーネント。-appearance-solid/outlined/flat/transparent、-color-informative/positive/negative/neutral、-size-xs/s/m/l/xlをサポート。",
-      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-button.tsx",
@@ -45,7 +48,9 @@
       "type": "registry:ui",
       "title": "Label",
       "description": "fly-byデザインシステムのLabelコンポーネント。フォームフィールドのラベルに使用。",
-      "dependencies": ["@radix-ui/react-label"],
+      "dependencies": [
+        "@radix-ui/react-label"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-label.tsx",
@@ -82,7 +87,10 @@
       "type": "registry:ui",
       "title": "Separator",
       "description": "fly-byデザインシステムのSeparatorコンポーネント。-orientation-horizontal/verticalをサポート。",
-      "dependencies": ["@radix-ui/react-separator", "class-variance-authority"],
+      "dependencies": [
+        "@radix-ui/react-separator",
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-separator.tsx",
@@ -95,7 +103,9 @@
       "type": "registry:ui",
       "title": "Badge",
       "description": "fly-byデザインシステムのBadgeコンポーネント。-appearance-flat/solid/outlined、-color-informative/positive/negative/neutral/favorite、-size-s/m/lをサポート。",
-      "dependencies": ["class-variance-authority"],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-badge.tsx",
@@ -108,7 +118,9 @@
       "type": "registry:ui",
       "title": "Spinner",
       "description": "fly-byデザインシステムのSpinnerコンポーネント。読み込み中インジケーター。-size-xs/s/m/l/xl、-color-neutral/informative/positive/negative/favoriteをサポート。",
-      "dependencies": ["class-variance-authority"],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-spinner.tsx",
@@ -121,7 +133,9 @@
       "type": "registry:ui",
       "title": "Skeleton",
       "description": "fly-byデザインシステムのSkeletonコンポーネント。コンテンツ読み込み中のプレースホルダー。-shape-rectangle/circle/textをサポート。",
-      "dependencies": ["class-variance-authority"],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-skeleton.tsx",
@@ -134,7 +148,9 @@
       "type": "registry:ui",
       "title": "Kbd",
       "description": "fly-byデザインシステムのKbdコンポーネント。キーボードショートカット表示用。-size-s/m/lをサポート。",
-      "dependencies": ["class-variance-authority"],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-kbd.tsx",
@@ -147,7 +163,10 @@
       "type": "registry:ui",
       "title": "Avatar",
       "description": "fly-byデザインシステムのAvatarコンポーネント。ユーザーアバター表示用。-size-xs/s/m/l/xl、-shape-circle/squareをサポート。",
-      "dependencies": ["@radix-ui/react-avatar", "class-variance-authority"],
+      "dependencies": [
+        "@radix-ui/react-avatar",
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-avatar.tsx",
@@ -160,7 +179,9 @@
       "type": "registry:ui",
       "title": "Aspect Ratio",
       "description": "fly-byデザインシステムのAspect Ratioコンポーネント。アスペクト比を維持するコンテナ。",
-      "dependencies": ["@radix-ui/react-aspect-ratio"],
+      "dependencies": [
+        "@radix-ui/react-aspect-ratio"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-aspect-ratio.tsx",
@@ -173,7 +194,10 @@
       "type": "registry:ui",
       "title": "Progress",
       "description": "fly-byデザインシステムのProgressコンポーネント。進捗バー。-size-s/m/l/xl、-color-neutral/informative/positive/negative/favoriteをサポート。",
-      "dependencies": ["@radix-ui/react-progress", "class-variance-authority"],
+      "dependencies": [
+        "@radix-ui/react-progress",
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-progress.tsx",
@@ -186,7 +210,10 @@
       "type": "registry:ui",
       "title": "Toggle",
       "description": "fly-byデザインシステムのToggleコンポーネント。オン/オフ切り替えボタン。-appearance-default/outlined、-size-s/m/lをサポート。",
-      "dependencies": ["@radix-ui/react-toggle", "class-variance-authority"],
+      "dependencies": [
+        "@radix-ui/react-toggle",
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-toggle.tsx",
@@ -216,7 +243,10 @@
       "type": "registry:ui",
       "title": "Switch",
       "description": "fly-byデザインシステムのSwitchコンポーネント。スイッチ。-size-s/m/l、-color-neutral/informative/positive/negativeをサポート。",
-      "dependencies": ["@radix-ui/react-switch", "class-variance-authority"],
+      "dependencies": [
+        "@radix-ui/react-switch",
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-switch.tsx",
@@ -246,7 +276,9 @@
       "type": "registry:ui",
       "title": "Tooltip",
       "description": "fly-byデザインシステムのTooltipコンポーネント。ホバー時にヒントを表示。",
-      "dependencies": ["@radix-ui/react-tooltip"],
+      "dependencies": [
+        "@radix-ui/react-tooltip"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-tooltip.tsx",
@@ -259,7 +291,9 @@
       "type": "registry:ui",
       "title": "Popover",
       "description": "fly-byデザインシステムのPopoverコンポーネント。クリックで開くフローティングコンテンツ。",
-      "dependencies": ["@radix-ui/react-popover"],
+      "dependencies": [
+        "@radix-ui/react-popover"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-popover.tsx",
@@ -272,7 +306,10 @@
       "type": "registry:ui",
       "title": "Dialog",
       "description": "fly-byデザインシステムのDialogコンポーネント。モーダルダイアログ。",
-      "dependencies": ["@radix-ui/react-dialog", "lucide-react"],
+      "dependencies": [
+        "@radix-ui/react-dialog",
+        "lucide-react"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-dialog.tsx",
@@ -285,7 +322,9 @@
       "type": "registry:ui",
       "title": "Alert Dialog",
       "description": "fly-byデザインシステムのAlert Dialogコンポーネント。確認ダイアログ。",
-      "dependencies": ["@radix-ui/react-alert-dialog"],
+      "dependencies": [
+        "@radix-ui/react-alert-dialog"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-alert-dialog.tsx",
@@ -315,7 +354,9 @@
       "type": "registry:ui",
       "title": "Drawer",
       "description": "fly-byデザインシステムのDrawerコンポーネント。ボトムシート。",
-      "dependencies": ["vaul"],
+      "dependencies": [
+        "vaul"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-drawer.tsx",
@@ -328,7 +369,10 @@
       "type": "registry:ui",
       "title": "Dropdown Menu",
       "description": "fly-byデザインシステムのDropdown Menuコンポーネント。ドロップダウンメニュー。",
-      "dependencies": ["@radix-ui/react-dropdown-menu", "lucide-react"],
+      "dependencies": [
+        "@radix-ui/react-dropdown-menu",
+        "lucide-react"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-dropdown-menu.tsx",
@@ -341,7 +385,10 @@
       "type": "registry:ui",
       "title": "Context Menu",
       "description": "fly-byデザインシステムのContext Menuコンポーネント。右クリックメニュー。",
-      "dependencies": ["@radix-ui/react-context-menu", "lucide-react"],
+      "dependencies": [
+        "@radix-ui/react-context-menu",
+        "lucide-react"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-context-menu.tsx",
@@ -354,7 +401,9 @@
       "type": "registry:ui",
       "title": "Hover Card",
       "description": "fly-byデザインシステムのHover Cardコンポーネント。ホバーで表示するカード。",
-      "dependencies": ["@radix-ui/react-hover-card"],
+      "dependencies": [
+        "@radix-ui/react-hover-card"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-hover-card.tsx",
@@ -384,7 +433,9 @@
       "type": "registry:ui",
       "title": "Sonner",
       "description": "fly-byデザインシステムのSonnerコンポーネント。トースト通知（Sonnerラッパー）。",
-      "dependencies": ["sonner"],
+      "dependencies": [
+        "sonner"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-sonner.tsx",
@@ -397,7 +448,10 @@
       "type": "registry:ui",
       "title": "Accordion",
       "description": "fly-byデザインシステムのAccordionコンポーネント。展開・折りたたみ可能なセクション。",
-      "dependencies": ["@radix-ui/react-accordion", "lucide-react"],
+      "dependencies": [
+        "@radix-ui/react-accordion",
+        "lucide-react"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-accordion.tsx",
@@ -410,7 +464,9 @@
       "type": "registry:ui",
       "title": "Collapsible",
       "description": "fly-byデザインシステムのCollapsibleコンポーネント。展開・折りたたみ可能なコンテンツ。",
-      "dependencies": ["@radix-ui/react-collapsible"],
+      "dependencies": [
+        "@radix-ui/react-collapsible"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-collapsible.tsx",
@@ -423,7 +479,10 @@
       "type": "registry:ui",
       "title": "Tabs",
       "description": "fly-byデザインシステムのTabsコンポーネント。タブ切り替え。-appearance-line/solid/outlineをサポート。",
-      "dependencies": ["@radix-ui/react-tabs", "class-variance-authority"],
+      "dependencies": [
+        "@radix-ui/react-tabs",
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-tabs.tsx",
@@ -452,7 +511,10 @@
       "type": "registry:ui",
       "title": "Breadcrumb",
       "description": "fly-byデザインシステムのBreadcrumbコンポーネント。パンくずリスト。",
-      "dependencies": ["@radix-ui/react-slot", "lucide-react"],
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "lucide-react"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-breadcrumb.tsx",
@@ -465,7 +527,9 @@
       "type": "registry:ui",
       "title": "Pagination",
       "description": "fly-byデザインシステムのPaginationコンポーネント。ページネーション。",
-      "dependencies": ["lucide-react"],
+      "dependencies": [
+        "lucide-react"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-pagination.tsx",
@@ -495,7 +559,10 @@
       "type": "registry:ui",
       "title": "Menubar",
       "description": "fly-byデザインシステムのMenubarコンポーネント。デスクトップアプリ風メニューバー。",
-      "dependencies": ["@radix-ui/react-menubar", "lucide-react"],
+      "dependencies": [
+        "@radix-ui/react-menubar",
+        "lucide-react"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-menubar.tsx",
@@ -508,7 +575,9 @@
       "type": "registry:ui",
       "title": "Scroll Area",
       "description": "fly-byデザインシステムのScroll Areaコンポーネント。カスタムスクロールバー。",
-      "dependencies": ["@radix-ui/react-scroll-area"],
+      "dependencies": [
+        "@radix-ui/react-scroll-area"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-scroll-area.tsx",
@@ -521,7 +590,10 @@
       "type": "registry:ui",
       "title": "Resizable",
       "description": "fly-byデザインシステムのResizableコンポーネント。リサイズ可能なパネル。",
-      "dependencies": ["react-resizable-panels", "lucide-react"],
+      "dependencies": [
+        "react-resizable-panels",
+        "lucide-react"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-resizable.tsx",
@@ -534,7 +606,10 @@
       "type": "registry:ui",
       "title": "Alert",
       "description": "fly-byデザインシステムのAlertコンポーネント。通知・警告メッセージ。-color-neutral/informative/positive/negative/warningをサポート。",
-      "dependencies": ["lucide-react", "class-variance-authority"],
+      "dependencies": [
+        "lucide-react",
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-alert.tsx",
@@ -564,7 +639,10 @@
       "type": "registry:ui",
       "title": "Native Select",
       "description": "fly-byデザインシステムのNative Selectコンポーネント。ネイティブHTML select。-size-s/m/lをサポート。",
-      "dependencies": ["lucide-react", "class-variance-authority"],
+      "dependencies": [
+        "lucide-react",
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-native-select.tsx",
@@ -577,8 +655,13 @@
       "type": "registry:ui",
       "title": "Command",
       "description": "fly-byデザインシステムのCommandコンポーネント。コマンドパレット・検索UI。",
-      "dependencies": ["cmdk", "lucide-react"],
-      "registryDependencies": ["fb-dialog"],
+      "dependencies": [
+        "cmdk",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://fly-by.design.yukyu.net/r/fb-dialog.json"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-command.tsx",
@@ -591,8 +674,14 @@
       "type": "registry:ui",
       "title": "Combobox",
       "description": "fly-byデザインシステムのComboboxコンポーネント。検索可能なセレクト。",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": ["fb-button", "fb-command", "fb-popover"],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://fly-by.design.yukyu.net/r/fb-button.json",
+        "https://fly-by.design.yukyu.net/r/fb-command.json",
+        "https://fly-by.design.yukyu.net/r/fb-popover.json"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-combobox.tsx",
@@ -605,7 +694,10 @@
       "type": "registry:ui",
       "title": "Slider",
       "description": "fly-byデザインシステムのSliderコンポーネント。スライダー。-size-s/m/l、-color-neutral/informative/positive/negativeをサポート。",
-      "dependencies": ["@radix-ui/react-slider", "class-variance-authority"],
+      "dependencies": [
+        "@radix-ui/react-slider",
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-slider.tsx",
@@ -618,7 +710,10 @@
       "type": "registry:ui",
       "title": "Input OTP",
       "description": "fly-byデザインシステムのInput OTPコンポーネント。ワンタイムパスワード入力。",
-      "dependencies": ["input-otp", "lucide-react"],
+      "dependencies": [
+        "input-otp",
+        "lucide-react"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-input-otp.tsx",
@@ -636,7 +731,9 @@
         "@radix-ui/react-slot",
         "react-hook-form"
       ],
-      "registryDependencies": ["fb-label"],
+      "registryDependencies": [
+        "https://fly-by.design.yukyu.net/r/fb-label.json"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-form.tsx",
@@ -649,7 +746,9 @@
       "type": "registry:ui",
       "title": "Field",
       "description": "fly-byデザインシステムのFieldコンポーネント。シンプルなフォームフィールドラッパー。",
-      "registryDependencies": ["fb-label"],
+      "registryDependencies": [
+        "https://fly-by.design.yukyu.net/r/fb-label.json"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-field.tsx",
@@ -662,7 +761,9 @@
       "type": "registry:ui",
       "title": "Input Group",
       "description": "fly-byデザインシステムのInput Groupコンポーネント。プレフィックス/サフィックス付きInput。-size-s/m/lをサポート。",
-      "dependencies": ["class-variance-authority"],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-input-group.tsx",
@@ -675,7 +776,9 @@
       "type": "registry:ui",
       "title": "Button Group",
       "description": "fly-byデザインシステムのButton Groupコンポーネント。ボタングループ。-orientation-horizontal/verticalをサポート。",
-      "dependencies": ["class-variance-authority"],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-button-group.tsx",
@@ -688,8 +791,14 @@
       "type": "registry:ui",
       "title": "Split Button",
       "description": "fly-byデザインシステムのSplit Buttonコンポーネント。メインアクションとドロップダウンメニューを組み合わせたボタン。",
-      "dependencies": ["lucide-react", "class-variance-authority"],
-      "registryDependencies": ["fb-button", "fb-dropdown-menu"],
+      "dependencies": [
+        "lucide-react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://fly-by.design.yukyu.net/r/fb-button.json",
+        "https://fly-by.design.yukyu.net/r/fb-dropdown-menu.json"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-split-button.tsx",
@@ -702,7 +811,10 @@
       "type": "registry:ui",
       "title": "Item",
       "description": "fly-byデザインシステムのItemコンポーネント。汎用リストアイテム。-variant-default/interactive/selected、-size-s/m/lをサポート。",
-      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-item.tsx",
@@ -727,12 +839,15 @@
       "type": "registry:ui",
       "title": "Data Table",
       "description": "fly-byデザインシステムのData Tableコンポーネント。ソート、フィルタ、ページネーション付きテーブル。",
-      "dependencies": ["@tanstack/react-table", "lucide-react"],
+      "dependencies": [
+        "@tanstack/react-table",
+        "lucide-react"
+      ],
       "registryDependencies": [
-        "fb-button",
-        "fb-dropdown-menu",
-        "fb-input",
-        "fb-table"
+        "https://fly-by.design.yukyu.net/r/fb-button.json",
+        "https://fly-by.design.yukyu.net/r/fb-dropdown-menu.json",
+        "https://fly-by.design.yukyu.net/r/fb-input.json",
+        "https://fly-by.design.yukyu.net/r/fb-table.json"
       ],
       "files": [
         {
@@ -746,8 +861,13 @@
       "type": "registry:ui",
       "title": "Calendar",
       "description": "fly-byデザインシステムのCalendarコンポーネント。日付選択カレンダー。",
-      "dependencies": ["react-day-picker", "lucide-react"],
-      "registryDependencies": ["fb-button"],
+      "dependencies": [
+        "react-day-picker",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://fly-by.design.yukyu.net/r/fb-button.json"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-calendar.tsx",
@@ -760,8 +880,15 @@
       "type": "registry:ui",
       "title": "Date Picker",
       "description": "fly-byデザインシステムのDate Pickerコンポーネント。日付選択ポップオーバー。",
-      "dependencies": ["date-fns", "lucide-react"],
-      "registryDependencies": ["fb-button", "fb-calendar", "fb-popover"],
+      "dependencies": [
+        "date-fns",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://fly-by.design.yukyu.net/r/fb-button.json",
+        "https://fly-by.design.yukyu.net/r/fb-calendar.json",
+        "https://fly-by.design.yukyu.net/r/fb-popover.json"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-date-picker.tsx",
@@ -774,8 +901,13 @@
       "type": "registry:ui",
       "title": "Carousel",
       "description": "fly-byデザインシステムのCarouselコンポーネント。スライダー/カルーセル。",
-      "dependencies": ["embla-carousel-react", "lucide-react"],
-      "registryDependencies": ["fb-button"],
+      "dependencies": [
+        "embla-carousel-react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://fly-by.design.yukyu.net/r/fb-button.json"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-carousel.tsx",
@@ -788,7 +920,9 @@
       "type": "registry:ui",
       "title": "Chart",
       "description": "fly-byデザインシステムのChartコンポーネント。rechartsベースのグラフ表示。",
-      "dependencies": ["recharts"],
+      "dependencies": [
+        "recharts"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-chart.tsx",
@@ -801,7 +935,10 @@
       "type": "registry:ui",
       "title": "Empty",
       "description": "fly-byデザインシステムのEmptyコンポーネント。空の状態表示。-size-s/m/lをサポート。",
-      "dependencies": ["lucide-react", "class-variance-authority"],
+      "dependencies": [
+        "lucide-react",
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/fly-by/ui/fb-empty.tsx",
@@ -820,10 +957,10 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "fb-button",
-        "fb-separator",
-        "fb-sheet",
-        "fb-tooltip"
+        "https://fly-by.design.yukyu.net/r/fb-button.json",
+        "https://fly-by.design.yukyu.net/r/fb-separator.json",
+        "https://fly-by.design.yukyu.net/r/fb-sheet.json",
+        "https://fly-by.design.yukyu.net/r/fb-tooltip.json"
       ],
       "files": [
         {
@@ -837,7 +974,10 @@
       "type": "registry:block",
       "title": "Hello World",
       "description": "fly-byスタイルのシンプルなHello Worldコンポーネント",
-      "registryDependencies": ["fb-button", "fb-text"],
+      "registryDependencies": [
+        "https://fly-by.design.yukyu.net/r/fb-button.json",
+        "https://fly-by.design.yukyu.net/r/fb-text.json"
+      ],
       "files": [
         {
           "path": "registry/fly-by/blocks/hello-world/hello-world.tsx",
@@ -850,14 +990,16 @@
       "type": "registry:block",
       "title": "Example Form",
       "description": "fly-byスタイルのお問い合わせフォーム。Zod validationを使用。",
-      "dependencies": ["zod"],
+      "dependencies": [
+        "zod"
+      ],
       "registryDependencies": [
-        "fb-button",
-        "fb-input",
-        "fb-label",
-        "fb-textarea",
-        "fb-card",
-        "fb-text"
+        "https://fly-by.design.yukyu.net/r/fb-button.json",
+        "https://fly-by.design.yukyu.net/r/fb-input.json",
+        "https://fly-by.design.yukyu.net/r/fb-label.json",
+        "https://fly-by.design.yukyu.net/r/fb-textarea.json",
+        "https://fly-by.design.yukyu.net/r/fb-card.json",
+        "https://fly-by.design.yukyu.net/r/fb-text.json"
       ],
       "files": [
         {

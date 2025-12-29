@@ -4,8 +4,8 @@
   "title": "Hello World",
   "description": "fly-byスタイルのシンプルなHello Worldコンポーネント",
   "registryDependencies": [
-    "fb-button",
-    "fb-text"
+    "https://fly-by.design.yukyu.net/r/fb-button.json",
+    "https://fly-by.design.yukyu.net/r/fb-text.json"
   ],
   "files": [
     {
