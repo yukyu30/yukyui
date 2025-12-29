@@ -23,7 +23,7 @@ const fbButtonVariants = cva(
       appearance: {
         flat: "-appearance-flat bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700",
         outlined: "-appearance-outlined border-2 bg-transparent hover:bg-gray-50 dark:hover:bg-gray-900",
-        solid: "-appearance-solid text-white shadow-sm",
+        solid: "-appearance-solid text-white",
         transparent: "-appearance-transparent bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800",
       },
       color: {

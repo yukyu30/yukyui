@@ -27,7 +27,7 @@ export const componentPreviews: Record<string, React.ReactNode> = {
     </div>
   ),
   'fb-card': (
-    <div className="fb-card w-64 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-md">
+    <div className="fb-card w-64 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
       <div className="p-6">
         <h3 className="text-lg font-semibold mb-2">Card Title</h3>
         <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -165,13 +165,13 @@ export const componentPreviews: Record<string, React.ReactNode> = {
   'fb-switch': (
     <div className="flex gap-4 items-center">
       <div className="h-6 w-11 rounded-full bg-gray-300 p-0.5">
-        <div className="h-5 w-5 rounded-full bg-white shadow transition-transform" />
+        <div className="h-5 w-5 rounded-full bg-white transition-transform" />
       </div>
       <div className="h-6 w-11 rounded-full bg-[#002CED] p-0.5 flex justify-end">
-        <div className="h-5 w-5 rounded-full bg-white shadow transition-transform" />
+        <div className="h-5 w-5 rounded-full bg-white transition-transform" />
       </div>
       <div className="h-6 w-11 rounded-full bg-green-600 p-0.5 flex justify-end">
-        <div className="h-5 w-5 rounded-full bg-white shadow transition-transform" />
+        <div className="h-5 w-5 rounded-full bg-white transition-transform" />
       </div>
     </div>
   ),
@@ -343,7 +343,7 @@ export const componentPreviews: Record<string, React.ReactNode> = {
     </div>
   ),
   'fb-toast': (
-    <div className="w-80 rounded-lg border border-gray-200 bg-white p-4 shadow-lg dark:border-gray-700 dark:bg-gray-900">
+    <div className="w-80 rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-900">
       <div className="flex items-start justify-between">
         <div className="flex-1">
           <h5 className="text-sm font-semibold mb-1">Notification</h5>
@@ -402,13 +402,13 @@ export const componentPreviews: Record<string, React.ReactNode> = {
       <button className="px-3 py-1.5 rounded-md border-2 border-gray-300 text-sm">
         Open
       </button>
-      <div className="absolute top-10 left-0 w-48 p-3 bg-white border border-gray-200 rounded-lg shadow-lg">
+      <div className="absolute top-10 left-0 w-48 p-3 bg-white border border-gray-200 rounded-lg">
         <p className="text-sm text-gray-700">Popover content</p>
       </div>
     </div>
   ),
   'fb-dialog': (
-    <div className="w-72 p-6 bg-white rounded-lg shadow-xl border border-gray-200">
+    <div className="w-72 p-6 bg-white rounded-lg border border-gray-200">
       <h3 className="text-lg font-semibold mb-2">Dialog Title</h3>
       <p className="text-sm text-gray-600 mb-4">This is a modal dialog example.</p>
       <div className="flex gap-2 justify-end">
@@ -420,7 +420,7 @@ export const componentPreviews: Record<string, React.ReactNode> = {
     </div>
   ),
   'fb-alert-dialog': (
-    <div className="w-72 p-6 bg-white rounded-lg shadow-xl border border-gray-200">
+    <div className="w-72 p-6 bg-white rounded-lg border border-gray-200">
       <h3 className="text-lg font-semibold mb-2">Are you sure?</h3>
       <p className="text-sm text-gray-600 mb-4">This action cannot be undone.</p>
       <div className="flex gap-2 justify-end">
@@ -430,19 +430,19 @@ export const componentPreviews: Record<string, React.ReactNode> = {
     </div>
   ),
   'fb-sheet': (
-    <div className="w-80 h-48 bg-white border-l-2 border-gray-200 shadow-xl p-6">
+    <div className="w-80 h-48 bg-white border-l-2 border-gray-200 p-6">
       <h3 className="text-lg font-semibold mb-2">Sheet Panel</h3>
       <p className="text-sm text-gray-600">Side panel content goes here.</p>
     </div>
   ),
   'fb-drawer': (
-    <div className="w-80 h-40 bg-white border-t-2 border-gray-200 shadow-xl p-6 rounded-t-2xl">
+    <div className="w-80 h-40 bg-white border-t-2 border-gray-200 p-6 rounded-t-2xl">
       <h3 className="text-lg font-semibold mb-2">Bottom Drawer</h3>
       <p className="text-sm text-gray-600">Swipe or click to dismiss.</p>
     </div>
   ),
   'fb-context-menu': (
-    <div className="w-48 bg-white border border-gray-200 rounded-lg shadow-lg p-1">
+    <div className="w-48 bg-white border border-gray-200 rounded-lg p-1">
       <div className="px-2 py-1.5 text-sm hover:bg-gray-100 rounded cursor-pointer">
         Copy
       </div>
@@ -458,7 +458,7 @@ export const componentPreviews: Record<string, React.ReactNode> = {
   'fb-hover-card': (
     <div className="relative inline-block">
       <span className="text-sm text-[#002CED] cursor-pointer underline">@username</span>
-      <div className="absolute top-6 left-0 w-64 p-4 bg-white border border-gray-200 rounded-lg shadow-lg">
+      <div className="absolute top-6 left-0 w-64 p-4 bg-white border border-gray-200 rounded-lg">
         <div className="flex items-center gap-3 mb-2">
           <div className="h-10 w-10 rounded-full bg-gray-200" />
           <div>
@@ -471,7 +471,7 @@ export const componentPreviews: Record<string, React.ReactNode> = {
     </div>
   ),
   'fb-sonner': (
-    <div className="w-80 rounded-lg border border-gray-200 bg-white p-4 shadow-lg">
+    <div className="w-80 rounded-lg border border-gray-200 bg-white p-4">
       <div className="flex items-center gap-2">
         <Check className="h-4 w-4 text-green-600" />
         <div className="flex-1">
@@ -507,15 +507,15 @@ export const componentPreviews: Record<string, React.ReactNode> = {
   ),
   'fb-navigation-menu': (
     <nav className="flex items-center gap-6 px-4 py-2 bg-white border-b border-gray-200">
-      <a href="#" className="text-sm font-medium text-[#002CED]">
+      <span className="text-sm font-medium text-[#002CED] cursor-pointer">
         Home
-      </a>
-      <a href="#" className="text-sm text-gray-600 hover:text-gray-900">
+      </span>
+      <span className="text-sm text-gray-600 hover:text-gray-900 cursor-pointer">
         Products
-      </a>
-      <a href="#" className="text-sm text-gray-600 hover:text-gray-900">
+      </span>
+      <span className="text-sm text-gray-600 hover:text-gray-900 cursor-pointer">
         About
-      </a>
+      </span>
     </nav>
   ),
   'fb-menubar': (
@@ -548,7 +548,7 @@ export const componentPreviews: Record<string, React.ReactNode> = {
         Select item...
         <ChevronDown className="h-4 w-4" />
       </button>
-      <div className="mt-1 w-full border border-gray-200 rounded-lg shadow-lg bg-white max-h-32">
+      <div className="mt-1 w-full border border-gray-200 rounded-lg bg-white max-h-32">
         <input
           type="text"
           placeholder="Search..."
@@ -711,20 +711,14 @@ export const componentPreviews: Record<string, React.ReactNode> = {
         <h3 className="font-semibold text-sm">Navigation</h3>
       </div>
       <nav className="flex-1 p-2">
-        <a
-          href="#"
-          className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#e6ebfd] text-[#002CED] text-sm font-medium"
-        >
+        <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#e6ebfd] text-[#002CED] text-sm font-medium cursor-pointer">
           <span>🏠</span>
           Home
-        </a>
-        <a
-          href="#"
-          className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 text-sm"
-        >
+        </div>
+        <div className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 text-sm cursor-pointer">
           <span>⚙️</span>
           Settings
-        </a>
+        </div>
       </nav>
     </div>
   ),
@@ -759,7 +753,7 @@ export const componentPreviews: Record<string, React.ReactNode> = {
     </div>
   ),
   'example-login': (
-    <div className="w-80 p-8 bg-white rounded-lg shadow-xl border border-gray-200">
+    <div className="w-80 p-8 bg-white rounded-lg border border-gray-200">
       <h2 className="text-2xl font-bold text-center mb-6">Sign In</h2>
       <div className="space-y-4">
         <input

@@ -12,6 +12,7 @@ import {
   Grid3X3,
   ArrowRight,
   FileText,
+  Download,
 } from 'lucide-react';
 import { getAllComponents } from '@/lib/registry';
 import { componentPreviews, defaultPreview } from '@/lib/component-previews';
@@ -101,6 +102,14 @@ export default function Home() {
               ドキュメント
             </a>
             <a
+              href="/fly-by.skill"
+              download
+              className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors flex items-center gap-1"
+            >
+              <Download className="h-4 w-4" />
+              Skill
+            </a>
+            <a
               href="https://github.com/yukyu30/fly-by"
               className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
               target="_blank"
@@ -146,11 +155,17 @@ export default function Home() {
             </FbBadge>
           </div>
 
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center justify-center gap-4 flex-wrap">
             <a href="/fly-by-full.md">
               <FbButton appearance="solid" color="informative" size="l">
                 <FileText className="h-5 w-5" />
                 完全ドキュメントを見る
+              </FbButton>
+            </a>
+            <a href="/fly-by.skill" download>
+              <FbButton appearance="outlined" color="informative" size="l">
+                <Download className="h-5 w-5" />
+                Claude Skillをダウンロード
               </FbButton>
             </a>
             <a href="https://github.com/yukyu30/fly-by" target="_blank" rel="noopener noreferrer">
@@ -248,7 +263,7 @@ export default function Home() {
               <Link key={component.name} href={`/components/${component.name}`}>
                 <FbCard
                   elevation={1}
-                  className="h-full hover:shadow-lg transition-shadow cursor-pointer overflow-hidden"
+                  className="h-full cursor-pointer overflow-hidden hover:border-gray-300 dark:hover:border-gray-700 transition-colors"
                 >
                   {/* Preview Area */}
                   <div className="bg-gray-50 dark:bg-gray-800/50 border-b border-gray-200 dark:border-gray-700 p-6 flex items-center justify-center min-h-[140px]">
@@ -377,6 +392,15 @@ export default function Home() {
             >
               <FileText className="h-4 w-4" />
               完全ドキュメント
+            </a>
+            <span>•</span>
+            <a
+              href="/fly-by.skill"
+              download
+              className="text-[#002CED] hover:underline flex items-center gap-1"
+            >
+              <Download className="h-4 w-4" />
+              Claude Skill
             </a>
             <span>•</span>
             <a
