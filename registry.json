@@ -78,6 +78,162 @@
       ]
     },
     {
+      "name": "fb-separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "fly-byデザインシステムのSeparatorコンポーネント。-orientation-horizontal/verticalをサポート。",
+      "dependencies": ["@radix-ui/react-separator", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/fly-by/ui/fb-separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fb-badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "fly-byデザインシステムのBadgeコンポーネント。-appearance-flat/solid/outlined、-color-informative/positive/negative/neutral/favorite、-size-s/m/lをサポート。",
+      "dependencies": ["class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/fly-by/ui/fb-badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fb-spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "fly-byデザインシステムのSpinnerコンポーネント。読み込み中インジケーター。-size-xs/s/m/l/xl、-color-neutral/informative/positive/negative/favoriteをサポート。",
+      "dependencies": ["class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/fly-by/ui/fb-spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fb-skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "fly-byデザインシステムのSkeletonコンポーネント。コンテンツ読み込み中のプレースホルダー。-shape-rectangle/circle/textをサポート。",
+      "dependencies": ["class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/fly-by/ui/fb-skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fb-kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "fly-byデザインシステムのKbdコンポーネント。キーボードショートカット表示用。-size-s/m/lをサポート。",
+      "dependencies": ["class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/fly-by/ui/fb-kbd.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fb-avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "fly-byデザインシステムのAvatarコンポーネント。ユーザーアバター表示用。-size-xs/s/m/l/xl、-shape-circle/squareをサポート。",
+      "dependencies": ["@radix-ui/react-avatar", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/fly-by/ui/fb-avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fb-aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "fly-byデザインシステムのAspect Ratioコンポーネント。アスペクト比を維持するコンテナ。",
+      "dependencies": ["@radix-ui/react-aspect-ratio"],
+      "files": [
+        {
+          "path": "registry/fly-by/ui/fb-aspect-ratio.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fb-progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "fly-byデザインシステムのProgressコンポーネント。進捗バー。-size-s/m/l/xl、-color-neutral/informative/positive/negative/favoriteをサポート。",
+      "dependencies": ["@radix-ui/react-progress", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/fly-by/ui/fb-progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fb-toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "fly-byデザインシステムのToggleコンポーネント。オン/オフ切り替えボタン。-appearance-default/outlined、-size-s/m/lをサポート。",
+      "dependencies": ["@radix-ui/react-toggle", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/fly-by/ui/fb-toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fb-checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "fly-byデザインシステムのCheckboxコンポーネント。チェックボックス。-size-s/m/l、-color-neutral/informative/positive/negativeをサポート。",
+      "dependencies": ["@radix-ui/react-checkbox", "lucide-react", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/fly-by/ui/fb-checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fb-switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "fly-byデザインシステムのSwitchコンポーネント。スイッチ。-size-s/m/l、-color-neutral/informative/positive/negativeをサポート。",
+      "dependencies": ["@radix-ui/react-switch", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/fly-by/ui/fb-switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fb-radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "fly-byデザインシステムのRadio Groupコンポーネント。ラジオボタングループ。-size-s/m/l、-color-neutral/informative/positive/negativeをサポート。",
+      "dependencies": ["@radix-ui/react-radio-group", "lucide-react", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/fly-by/ui/fb-radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "hello-world",
       "type": "registry:block",
       "title": "Hello World",
