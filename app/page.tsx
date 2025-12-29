@@ -4,23 +4,6 @@ import * as React from "react"
 import Image from "next/image"
 import { Check, Copy, Terminal, Package, Palette, Grid3X3, User, Search, ChevronRight, ChevronDown, Settings, Bell } from "lucide-react"
 
-// Import fly-by components
-import { FbButton } from "@/registry/fly-by/ui/fb-button"
-import { FbBadge } from "@/registry/fly-by/ui/fb-badge"
-import { FbCard, FbCardHeader, FbCardTitle, FbCardDescription, FbCardBody } from "@/registry/fly-by/ui/fb-card"
-import { FbInput } from "@/registry/fly-by/ui/fb-input"
-import { FbLabel } from "@/registry/fly-by/ui/fb-label"
-import { FbText } from "@/registry/fly-by/ui/fb-text"
-import { FbTextarea } from "@/registry/fly-by/ui/fb-textarea"
-import { FbSeparator } from "@/registry/fly-by/ui/fb-separator"
-import { FbSpinner } from "@/registry/fly-by/ui/fb-spinner"
-import { FbSkeleton } from "@/registry/fly-by/ui/fb-skeleton"
-import { FbKbd } from "@/registry/fly-by/ui/fb-kbd"
-import { FbProgress } from "@/registry/fly-by/ui/fb-progress"
-import { FbCheckbox } from "@/registry/fly-by/ui/fb-checkbox"
-import { FbSwitch } from "@/registry/fly-by/ui/fb-switch"
-import { FbAlert, FbAlertTitle, FbAlertDescription } from "@/registry/fly-by/ui/fb-alert"
-
 const BASE_URL = "https://yukyui.vercel.app/r"
 
 function CopyButton({ text }: { text: string }) {
@@ -70,34 +53,62 @@ function ComponentShowcase({ name, description, children }: ComponentShowcasePro
   const command = `npx shadcn@latest add "${BASE_URL}/${name}.json"`
 
   return (
-    <FbCard elevation={1} className="overflow-hidden">
-      <FbCardHeader className="pb-2">
+    <div className="rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm overflow-hidden">
+      <div className="px-4 py-3 border-b border-gray-100 dark:border-gray-800">
         <div className="flex items-center justify-between">
-          <FbCardTitle className="text-base font-mono text-[#002CED]">{name}</FbCardTitle>
+          <span className="text-base font-mono text-[#002CED] font-semibold">{name}</span>
           <CopyButton text={command} />
         </div>
-        <FbCardDescription>{description}</FbCardDescription>
-      </FbCardHeader>
-      <FbCardBody className="bg-gray-50 dark:bg-gray-800/50 border-t border-b border-gray-100 dark:border-gray-700 py-8 flex items-center justify-center min-h-[120px]">
+        <p className="text-sm text-gray-500 mt-1">{description}</p>
+      </div>
+      <div className="bg-gray-50 dark:bg-gray-800/50 border-b border-gray-100 dark:border-gray-700 py-8 flex items-center justify-center min-h-[120px]">
         {children}
-      </FbCardBody>
+      </div>
       <div className="px-4 py-2 bg-gray-900 text-gray-100 text-xs font-mono overflow-x-auto">
         <code>npx shadcn@latest add &quot;{BASE_URL}/{name}.json&quot;</code>
       </div>
-    </FbCard>
+    </div>
   )
 }
 
-// All components in a flat list
+// HTML-based button component for previews
+function PreviewButton({ variant = "solid", color = "informative", size = "m", className = "", children }: {
+  variant?: "solid" | "outlined" | "flat"
+  color?: "informative" | "neutral" | "negative" | "positive"
+  size?: "s" | "m"
+  className?: string
+  children: React.ReactNode
+}) {
+  const baseClass = "inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors"
+  const sizeClass = size === "s" ? "h-8 px-3" : "h-9 px-4"
+
+  let colorClass = ""
+  if (variant === "solid") {
+    if (color === "informative") colorClass = "bg-[#002CED] text-white hover:bg-[#0025c4]"
+    else if (color === "positive") colorClass = "bg-green-600 text-white hover:bg-green-700"
+    else if (color === "negative") colorClass = "bg-red-600 text-white hover:bg-red-700"
+    else colorClass = "bg-gray-600 text-white hover:bg-gray-700"
+  } else if (variant === "outlined") {
+    if (color === "informative") colorClass = "border-2 border-[#002CED] text-[#002CED] bg-transparent hover:bg-[#e6ebfd]"
+    else if (color === "negative") colorClass = "border-2 border-red-600 text-red-600 bg-transparent hover:bg-red-50"
+    else colorClass = "border-2 border-gray-400 text-gray-700 bg-transparent hover:bg-gray-50"
+  } else {
+    colorClass = "bg-gray-100 text-gray-700 hover:bg-gray-200"
+  }
+
+  return <button className={`${baseClass} ${sizeClass} ${colorClass} ${className}`}>{children}</button>
+}
+
+// All components with HTML/CSS previews
 const allComponents = [
   {
     name: "fb-button",
     description: "ボタン",
     preview: (
       <div className="flex flex-wrap gap-2 items-center justify-center">
-        <FbButton appearance="solid" color="informative">Primary</FbButton>
-        <FbButton appearance="outlined" color="informative">Outlined</FbButton>
-        <FbButton appearance="flat" color="neutral">Flat</FbButton>
+        <PreviewButton variant="solid" color="informative">Primary</PreviewButton>
+        <PreviewButton variant="outlined" color="informative">Outlined</PreviewButton>
+        <PreviewButton variant="flat" color="neutral">Flat</PreviewButton>
       </div>
     ),
   },
@@ -105,40 +116,36 @@ const allComponents = [
     name: "fb-card",
     description: "カード",
     preview: (
-      <FbCard elevation={2} className="w-48">
-        <FbCardBody className="text-center">
-          <FbText level="s">Card Content</FbText>
-        </FbCardBody>
-      </FbCard>
+      <div className="w-48 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-md">
+        <div className="px-6 py-4 text-center text-sm">Card Content</div>
+      </div>
     ),
   },
   {
     name: "fb-input",
     description: "テキスト入力",
     preview: (
-      <div className="w-48">
-        <FbInput placeholder="入力してください" />
-      </div>
+      <input className="w-48 rounded-md border border-gray-300 bg-transparent h-9 px-3 text-sm outline-none focus:border-[#002CED] focus:ring-2 focus:ring-[#002CED]/20" placeholder="入力してください" />
     ),
   },
   {
     name: "fb-label",
     description: "ラベル",
-    preview: <FbLabel>ラベルテキスト</FbLabel>,
+    preview: <label className="text-sm font-medium">ラベルテキスト</label>,
   },
   {
     name: "fb-textarea",
     description: "テキストエリア",
-    preview: <FbTextarea placeholder="テキストを入力..." className="w-48 h-20" />,
+    preview: <textarea className="w-48 h-20 rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm outline-none resize-none focus:border-[#002CED]" placeholder="テキストを入力..." />,
   },
   {
     name: "fb-text",
     description: "テキスト",
     preview: (
       <div className="space-y-1 text-center">
-        <FbText level="l" density="dense">Large Text</FbText>
-        <FbText level="m">Medium Text</FbText>
-        <FbText level="s" className="text-gray-500">Small Text</FbText>
+        <p className="text-lg leading-tight">Large Text</p>
+        <p className="text-base">Medium Text</p>
+        <p className="text-sm text-gray-500">Small Text</p>
       </div>
     ),
   },
@@ -147,9 +154,9 @@ const allComponents = [
     description: "区切り線",
     preview: (
       <div className="w-48 space-y-2">
-        <FbText level="s">Above</FbText>
-        <FbSeparator />
-        <FbText level="s">Below</FbText>
+        <p className="text-sm">Above</p>
+        <div className="h-px bg-gray-200 dark:bg-gray-700" />
+        <p className="text-sm">Below</p>
       </div>
     ),
   },
@@ -158,9 +165,9 @@ const allComponents = [
     description: "バッジ",
     preview: (
       <div className="flex flex-wrap gap-2 justify-center">
-        <FbBadge color="informative">New</FbBadge>
-        <FbBadge appearance="solid" color="positive">Success</FbBadge>
-        <FbBadge appearance="outlined" color="negative">Error</FbBadge>
+        <span className="inline-flex items-center justify-center rounded-full h-6 px-2.5 text-xs font-medium bg-[#e6ebfd] text-[#002CED]">New</span>
+        <span className="inline-flex items-center justify-center rounded-full h-6 px-2.5 text-xs font-medium bg-green-600 text-white">Success</span>
+        <span className="inline-flex items-center justify-center rounded-full h-6 px-2.5 text-xs font-medium border border-red-600 text-red-600">Error</span>
       </div>
     ),
   },
@@ -169,9 +176,9 @@ const allComponents = [
     description: "スピナー",
     preview: (
       <div className="flex gap-4 items-center">
-        <FbSpinner size="s" />
-        <FbSpinner size="m" />
-        <FbSpinner size="l" />
+        <div className="h-4 w-4 border-2 border-[#002CED] border-t-transparent rounded-full animate-spin" />
+        <div className="h-6 w-6 border-2 border-[#002CED] border-t-transparent rounded-full animate-spin" />
+        <div className="h-8 w-8 border-2 border-[#002CED] border-t-transparent rounded-full animate-spin" />
       </div>
     ),
   },
@@ -180,9 +187,9 @@ const allComponents = [
     description: "スケルトン",
     preview: (
       <div className="space-y-2 w-48">
-        <FbSkeleton className="h-4 w-full" />
-        <FbSkeleton className="h-4 w-3/4" />
-        <FbSkeleton className="h-4 w-1/2" />
+        <div className="h-4 w-full bg-gray-200 dark:bg-gray-700 rounded animate-pulse" />
+        <div className="h-4 w-3/4 bg-gray-200 dark:bg-gray-700 rounded animate-pulse" />
+        <div className="h-4 w-1/2 bg-gray-200 dark:bg-gray-700 rounded animate-pulse" />
       </div>
     ),
   },
@@ -191,8 +198,8 @@ const allComponents = [
     description: "キーボード",
     preview: (
       <div className="flex gap-1 items-center">
-        <FbKbd>⌘</FbKbd>
-        <FbKbd>K</FbKbd>
+        <kbd className="inline-flex items-center justify-center h-6 px-2 rounded border border-gray-300 bg-gray-100 text-xs font-mono">⌘</kbd>
+        <kbd className="inline-flex items-center justify-center h-6 px-2 rounded border border-gray-300 bg-gray-100 text-xs font-mono">K</kbd>
       </div>
     ),
   },
@@ -221,8 +228,8 @@ const allComponents = [
     description: "プログレスバー",
     preview: (
       <div className="w-48 space-y-2">
-        <FbProgress value={60} />
-        <FbProgress value={80} color="positive" />
+        <div className="h-2 bg-gray-200 rounded-full overflow-hidden"><div className="h-full w-3/5 bg-[#002CED] rounded-full" /></div>
+        <div className="h-2 bg-gray-200 rounded-full overflow-hidden"><div className="h-full w-4/5 bg-green-600 rounded-full" /></div>
       </div>
     ),
   },
@@ -232,7 +239,7 @@ const allComponents = [
     preview: (
       <div className="flex gap-2">
         <button className="h-9 w-9 rounded-md flex items-center justify-center bg-gray-200 text-gray-900 font-bold">B</button>
-        <button className="h-9 w-9 rounded-md flex items-center justify-center bg-transparent hover:bg-gray-100 font-bold italic">I</button>
+        <button className="h-9 w-9 rounded-md flex items-center justify-center bg-transparent hover:bg-gray-100 italic">I</button>
       </div>
     ),
   },
@@ -241,9 +248,9 @@ const allComponents = [
     description: "チェックボックス",
     preview: (
       <div className="flex gap-4 items-center">
-        <FbCheckbox />
-        <FbCheckbox defaultChecked />
-        <FbCheckbox defaultChecked color="positive" />
+        <div className="h-5 w-5 rounded border-2 border-gray-400" />
+        <div className="h-5 w-5 rounded border-2 border-[#002CED] bg-[#002CED] flex items-center justify-center"><Check className="h-3 w-3 text-white" /></div>
+        <div className="h-5 w-5 rounded border-2 border-green-600 bg-green-600 flex items-center justify-center"><Check className="h-3 w-3 text-white" /></div>
       </div>
     ),
   },
@@ -252,9 +259,9 @@ const allComponents = [
     description: "スイッチ",
     preview: (
       <div className="flex gap-4 items-center">
-        <FbSwitch />
-        <FbSwitch defaultChecked />
-        <FbSwitch defaultChecked color="positive" />
+        <div className="h-6 w-11 rounded-full bg-gray-300 p-0.5"><div className="h-5 w-5 rounded-full bg-white shadow" /></div>
+        <div className="h-6 w-11 rounded-full bg-[#002CED] p-0.5 flex justify-end"><div className="h-5 w-5 rounded-full bg-white shadow" /></div>
+        <div className="h-6 w-11 rounded-full bg-green-600 p-0.5 flex justify-end"><div className="h-5 w-5 rounded-full bg-white shadow" /></div>
       </div>
     ),
   },
@@ -264,9 +271,7 @@ const allComponents = [
     preview: (
       <div className="flex gap-4 items-center">
         <div className="flex items-center gap-2">
-          <div className="h-4 w-4 rounded-full border-2 border-[#002CED] flex items-center justify-center">
-            <div className="h-2 w-2 rounded-full bg-[#002CED]" />
-          </div>
+          <div className="h-4 w-4 rounded-full border-2 border-[#002CED] flex items-center justify-center"><div className="h-2 w-2 rounded-full bg-[#002CED]" /></div>
           <span className="text-sm">Option 1</span>
         </div>
         <div className="flex items-center gap-2">
@@ -279,42 +284,42 @@ const allComponents = [
   {
     name: "fb-tooltip",
     description: "ツールチップ",
-    preview: <FbButton appearance="outlined" color="informative">Hover me</FbButton>,
+    preview: <PreviewButton variant="outlined" color="informative">Hover me</PreviewButton>,
   },
   {
     name: "fb-popover",
     description: "ポップオーバー",
-    preview: <FbButton appearance="outlined" color="informative">Open Popover</FbButton>,
+    preview: <PreviewButton variant="outlined" color="informative">Open Popover</PreviewButton>,
   },
   {
     name: "fb-dialog",
     description: "ダイアログ",
-    preview: <FbButton appearance="outlined" color="informative">Open Dialog</FbButton>,
+    preview: <PreviewButton variant="outlined" color="informative">Open Dialog</PreviewButton>,
   },
   {
     name: "fb-alert-dialog",
     description: "アラートダイアログ",
-    preview: <FbButton appearance="outlined" color="negative">Delete</FbButton>,
+    preview: <PreviewButton variant="outlined" color="negative">Delete</PreviewButton>,
   },
   {
     name: "fb-sheet",
     description: "シート",
-    preview: <FbButton appearance="outlined" color="informative">Open Sheet</FbButton>,
+    preview: <PreviewButton variant="outlined" color="informative">Open Sheet</PreviewButton>,
   },
   {
     name: "fb-drawer",
     description: "ドロワー",
-    preview: <FbButton appearance="outlined" color="informative">Open Drawer</FbButton>,
+    preview: <PreviewButton variant="outlined" color="informative">Open Drawer</PreviewButton>,
   },
   {
     name: "fb-dropdown-menu",
     description: "ドロップダウンメニュー",
     preview: (
-      <FbButton appearance="flat" color="neutral">
-        <Settings className="h-4 w-4 mr-2" />
+      <PreviewButton variant="flat" color="neutral">
+        <Settings className="h-4 w-4" />
         Menu
-        <ChevronDown className="h-4 w-4 ml-2" />
-      </FbButton>
+        <ChevronDown className="h-4 w-4" />
+      </PreviewButton>
     ),
   },
   {
@@ -335,16 +340,16 @@ const allComponents = [
     name: "fb-toast",
     description: "トースト",
     preview: (
-      <FbButton appearance="solid" color="informative">
-        <Bell className="h-4 w-4 mr-2" />
+      <PreviewButton variant="solid" color="informative">
+        <Bell className="h-4 w-4" />
         Show Toast
-      </FbButton>
+      </PreviewButton>
     ),
   },
   {
     name: "fb-sonner",
     description: "Sonner",
-    preview: <FbButton appearance="solid" color="positive">Show Notification</FbButton>,
+    preview: <PreviewButton variant="solid" color="positive">Show Notification</PreviewButton>,
   },
   {
     name: "fb-accordion",
@@ -386,9 +391,9 @@ const allComponents = [
     description: "トグルグループ",
     preview: (
       <div className="flex">
-        <FbButton appearance="solid" color="informative" size="s" className="rounded-r-none">Left</FbButton>
-        <FbButton appearance="outlined" color="informative" size="s" className="rounded-none border-l-0">Center</FbButton>
-        <FbButton appearance="outlined" color="informative" size="s" className="rounded-l-none border-l-0">Right</FbButton>
+        <PreviewButton variant="solid" color="informative" size="s" className="rounded-r-none">Left</PreviewButton>
+        <PreviewButton variant="outlined" color="informative" size="s" className="rounded-none border-l-0">Center</PreviewButton>
+        <PreviewButton variant="outlined" color="informative" size="s" className="rounded-l-none border-l-0">Right</PreviewButton>
       </div>
     ),
   },
@@ -410,11 +415,11 @@ const allComponents = [
     description: "ページネーション",
     preview: (
       <div className="flex items-center gap-1">
-        <FbButton appearance="flat" color="neutral" size="s">←</FbButton>
-        <FbButton appearance="solid" color="informative" size="s">1</FbButton>
-        <FbButton appearance="flat" color="neutral" size="s">2</FbButton>
-        <FbButton appearance="flat" color="neutral" size="s">3</FbButton>
-        <FbButton appearance="flat" color="neutral" size="s">→</FbButton>
+        <PreviewButton variant="flat" color="neutral" size="s">←</PreviewButton>
+        <PreviewButton variant="solid" color="informative" size="s">1</PreviewButton>
+        <PreviewButton variant="flat" color="neutral" size="s">2</PreviewButton>
+        <PreviewButton variant="flat" color="neutral" size="s">3</PreviewButton>
+        <PreviewButton variant="flat" color="neutral" size="s">→</PreviewButton>
       </div>
     ),
   },
@@ -464,20 +469,20 @@ const allComponents = [
     name: "fb-alert",
     description: "アラート",
     preview: (
-      <FbAlert color="informative" className="w-48">
-        <FbAlertTitle>Info</FbAlertTitle>
-        <FbAlertDescription>Alert message</FbAlertDescription>
-      </FbAlert>
+      <div className="w-48 rounded-lg border border-[#002CED] bg-[#e6ebfd] p-4">
+        <h5 className="text-sm font-medium text-[#002CED]">Info</h5>
+        <p className="text-xs text-[#002CED]/80 mt-1">Alert message</p>
+      </div>
     ),
   },
   {
     name: "fb-select",
     description: "セレクト",
     preview: (
-      <FbButton appearance="outlined" color="neutral" className="w-36 justify-between">
+      <button className="w-36 h-9 px-3 rounded-md border-2 border-gray-400 text-gray-700 bg-transparent flex items-center justify-between text-sm">
         Select option
         <ChevronDown className="h-4 w-4" />
-      </FbButton>
+      </button>
     ),
   },
   {
@@ -497,7 +502,7 @@ const allComponents = [
       <div className="flex items-center gap-2 px-3 py-2 border rounded-lg w-48">
         <Search className="h-4 w-4 text-gray-400" />
         <span className="text-sm text-gray-500">Search...</span>
-        <FbKbd className="ml-auto">⌘K</FbKbd>
+        <kbd className="ml-auto inline-flex items-center justify-center h-5 px-1.5 rounded border border-gray-300 bg-gray-100 text-xs font-mono">⌘K</kbd>
       </div>
     ),
   },
@@ -505,10 +510,10 @@ const allComponents = [
     name: "fb-combobox",
     description: "コンボボックス",
     preview: (
-      <FbButton appearance="outlined" color="neutral" className="w-36 justify-between">
+      <button className="w-36 h-9 px-3 rounded-md border-2 border-gray-400 text-gray-700 bg-transparent flex items-center justify-between text-sm">
         Select...
         <ChevronDown className="h-4 w-4" />
-      </FbButton>
+      </button>
     ),
   },
   {
@@ -541,8 +546,8 @@ const allComponents = [
     description: "フォーム",
     preview: (
       <div className="space-y-2 w-40">
-        <FbLabel>Email</FbLabel>
-        <FbInput placeholder="email@example.com" size="s" />
+        <label className="text-sm font-medium">Email</label>
+        <input className="w-full h-8 px-2 text-sm rounded-md border border-gray-300 outline-none" placeholder="email@example.com" />
       </div>
     ),
   },
@@ -551,8 +556,8 @@ const allComponents = [
     description: "フィールド",
     preview: (
       <div className="space-y-1 w-40">
-        <FbLabel>Username</FbLabel>
-        <FbInput placeholder="username" size="s" />
+        <label className="text-sm font-medium">Username</label>
+        <input className="w-full h-8 px-2 text-sm rounded-md border border-gray-300 outline-none" placeholder="username" />
         <p className="text-xs text-gray-500">Enter your username</p>
       </div>
     ),
@@ -563,7 +568,7 @@ const allComponents = [
     preview: (
       <div className="flex w-48">
         <span className="px-3 py-2 bg-gray-100 border border-r-0 rounded-l-md text-sm">@</span>
-        <FbInput placeholder="username" className="rounded-l-none" />
+        <input className="flex-1 h-9 px-3 rounded-r-md border border-gray-300 outline-none text-sm" placeholder="username" />
       </div>
     ),
   },
@@ -572,10 +577,10 @@ const allComponents = [
     description: "ボタングループ",
     preview: (
       <div className="flex">
-        <FbButton appearance="outlined" color="neutral" size="s" className="rounded-r-none">Save</FbButton>
-        <FbButton appearance="outlined" color="neutral" size="s" className="rounded-l-none border-l-0">
+        <PreviewButton variant="outlined" color="neutral" size="s" className="rounded-r-none">Save</PreviewButton>
+        <PreviewButton variant="outlined" color="neutral" size="s" className="rounded-l-none border-l-0">
           <ChevronDown className="h-4 w-4" />
-        </FbButton>
+        </PreviewButton>
       </div>
     ),
   },
@@ -615,7 +620,7 @@ const allComponents = [
     preview: (
       <div className="w-48 text-xs">
         <div className="flex items-center gap-2 mb-2">
-          <FbInput placeholder="Filter..." size="s" className="h-7" />
+          <input className="flex-1 h-7 px-2 rounded-md border border-gray-300 outline-none text-sm" placeholder="Filter..." />
         </div>
         <div className="border rounded text-center py-2 text-gray-500">Table</div>
       </div>
@@ -647,9 +652,9 @@ const allComponents = [
     name: "fb-date-picker",
     description: "日付選択",
     preview: (
-      <FbButton appearance="outlined" color="neutral" className="w-40 justify-start">
+      <button className="w-40 h-9 px-3 rounded-md border-2 border-gray-400 text-gray-700 bg-transparent flex items-center gap-2 text-sm">
         📅 Pick a date
-      </FbButton>
+      </button>
     ),
   },
   {
@@ -657,9 +662,9 @@ const allComponents = [
     description: "カルーセル",
     preview: (
       <div className="flex items-center gap-2">
-        <FbButton appearance="flat" color="neutral" size="s">←</FbButton>
+        <PreviewButton variant="flat" color="neutral" size="s">←</PreviewButton>
         <div className="w-24 h-16 bg-gray-100 dark:bg-gray-800 rounded flex items-center justify-center text-xs">Slide 1</div>
-        <FbButton appearance="flat" color="neutral" size="s">→</FbButton>
+        <PreviewButton variant="flat" color="neutral" size="s">→</PreviewButton>
       </div>
     ),
   },
