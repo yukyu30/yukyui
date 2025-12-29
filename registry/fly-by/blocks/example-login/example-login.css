@@ -87,16 +87,15 @@
 
 .fb-form-group input {
   padding: var(--fb-space-s);
-  border: 1px solid var(--fb-border-color);
+  border: 2px solid var(--fb-border-color);
   border-radius: 4px;
   font-size: 1rem;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: border-color 0.15s ease;
 }
 
 .fb-form-group input:focus {
   outline: none;
   border-color: var(--fb-primary-color);
-  box-shadow: 0 0 0 3px var(--fb-primary-light);
 }
 
 .fb-form-group input::placeholder {
@@ -126,7 +125,7 @@
 
 .fb-login-button:focus {
   outline: none;
-  box-shadow: 0 0 0 3px var(--fb-primary-light);
+  border: 2px solid var(--fb-primary-light);
 }
 
 .fb-form-footer {
