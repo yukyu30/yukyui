@@ -21,7 +21,7 @@ const fbToggleVariants = cva(
     variants: {
       appearance: {
         default: "-appearance-default bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800",
-        outlined: "-appearance-outlined border border-gray-300 bg-transparent hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800",
+        outlined: "-appearance-outlined border-2 border-gray-300 bg-transparent hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800",
       },
       size: {
         s: "-size-s h-8 w-8 min-w-8",

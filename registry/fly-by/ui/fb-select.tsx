@@ -27,7 +27,7 @@ const FbSelectGroup = SelectPrimitive.Group
 const FbSelectValue = SelectPrimitive.Value
 
 const fbSelectTriggerVariants = cva(
-  "fb-select-trigger flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-white placeholder:text-gray-500 focus:outline-none focus:ring-1 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 dark:ring-offset-gray-950 dark:placeholder:text-gray-400",
+  "fb-select-trigger flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border-2 bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-white placeholder:text-gray-500 focus:outline-none focus:ring-1 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 dark:ring-offset-gray-950 dark:placeholder:text-gray-400",
   {
     variants: {
       size: {

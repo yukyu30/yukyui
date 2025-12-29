@@ -167,7 +167,7 @@ const allComponents = [
       <div className="flex flex-wrap gap-2 justify-center">
         <span className="inline-flex items-center justify-center rounded-full h-6 px-2.5 text-xs font-medium bg-[#e6ebfd] text-[#002CED]">New</span>
         <span className="inline-flex items-center justify-center rounded-full h-6 px-2.5 text-xs font-medium bg-green-600 text-white">Success</span>
-        <span className="inline-flex items-center justify-center rounded-full h-6 px-2.5 text-xs font-medium border border-red-600 text-red-600">Error</span>
+        <span className="inline-flex items-center justify-center rounded-full h-6 px-2.5 text-xs font-medium border-2 border-red-600 text-red-600">Error</span>
       </div>
     ),
   },
@@ -489,7 +489,7 @@ const allComponents = [
     name: "fb-native-select",
     description: "ネイティブセレクト",
     preview: (
-      <select className="w-36 px-3 py-2 border rounded-lg text-sm bg-white dark:bg-gray-900">
+      <select className="w-36 px-3 py-2 border-2 border-gray-200 dark:border-gray-700 rounded-lg text-sm bg-white dark:bg-gray-900">
         <option>Option 1</option>
         <option>Option 2</option>
       </select>

@@ -19,7 +19,7 @@ const fbBadgeVariants = cva(
     variants: {
       appearance: {
         flat: "-appearance-flat",
-        outlined: "-appearance-outlined border bg-transparent",
+        outlined: "-appearance-outlined border-2 bg-transparent",
         solid: "-appearance-solid text-white",
       },
       color: {

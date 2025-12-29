@@ -20,7 +20,7 @@ import { cn } from "@/lib/utils"
  */
 
 const fbNativeSelectVariants = cva(
-  "fb-native-select flex w-full cursor-pointer appearance-none items-center rounded-md border bg-transparent shadow-sm ring-offset-white focus:outline-none focus:ring-1 disabled:cursor-not-allowed disabled:opacity-50 dark:ring-offset-gray-950",
+  "fb-native-select flex w-full cursor-pointer appearance-none items-center rounded-md border-2 bg-transparent shadow-sm ring-offset-white focus:outline-none focus:ring-1 disabled:cursor-not-allowed disabled:opacity-50 dark:ring-offset-gray-950",
   {
     variants: {
       size: {
