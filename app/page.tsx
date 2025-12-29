@@ -11,11 +11,13 @@ import {
   Palette,
   Grid3X3,
   ArrowRight,
+  FileText,
 } from 'lucide-react';
 import { getAllComponents } from '@/lib/registry';
 import { FbCard } from '@/registry/fly-by/ui/fb-card';
 import { FbBadge } from '@/registry/fly-by/ui/fb-badge';
 import { FbInput } from '@/registry/fly-by/ui/fb-input';
+import { FbButton } from '@/registry/fly-by/ui/fb-button';
 
 const BASE_URL = 'https://fly-by.design.yukyu.net/r';
 
@@ -91,6 +93,13 @@ export default function Home() {
               {allComponents.length} components
             </span>
             <a
+              href="/fly-by-full.md"
+              className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors flex items-center gap-1"
+            >
+              <FileText className="h-4 w-4" />
+              ドキュメント
+            </a>
+            <a
               href="https://github.com/yukyu30/fly-by"
               className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
               target="_blank"
@@ -121,7 +130,7 @@ export default function Home() {
             <br />
             shadcn/ui 互換のコンポーネントライブラリ。
           </p>
-          <div className="flex items-center justify-center gap-4 flex-wrap">
+          <div className="flex items-center justify-center gap-4 flex-wrap mb-8">
             <FbBadge appearance="flat" color="neutral" size="l" className="px-4 py-1">
               <Grid3X3 className="h-4 w-4" />
               {allComponents.length} コンポーネント
@@ -134,6 +143,20 @@ export default function Home() {
               <Terminal className="h-4 w-4" />
               shadcn CLI 対応
             </FbBadge>
+          </div>
+
+          <div className="flex items-center justify-center gap-4">
+            <a href="/fly-by-full.md">
+              <FbButton appearance="solid" color="informative" size="l">
+                <FileText className="h-5 w-5" />
+                完全ドキュメントを見る
+              </FbButton>
+            </a>
+            <a href="https://github.com/yukyu30/fly-by" target="_blank" rel="noopener noreferrer">
+              <FbButton appearance="outlined" color="neutral" size="l">
+                GitHub
+              </FbButton>
+            </a>
           </div>
         </section>
 
@@ -338,16 +361,24 @@ export default function Home() {
       <footer className="border-t border-gray-200 dark:border-gray-800 py-8 mt-12">
         <div className="max-w-7xl mx-auto px-4 text-center text-sm text-gray-600 dark:text-gray-400">
           <p>fly-by Design System - Built with shadcn/ui</p>
-          <p className="mt-2">
+          <div className="mt-3 flex items-center justify-center gap-4">
+            <a
+              href="/fly-by-full.md"
+              className="text-[#002CED] hover:underline flex items-center gap-1"
+            >
+              <FileText className="h-4 w-4" />
+              完全ドキュメント
+            </a>
+            <span>•</span>
             <a
               href="https://github.com/yukyu30/fly-by"
               className="text-[#002CED] hover:underline"
               target="_blank"
               rel="noopener noreferrer"
             >
-              View on GitHub
+              GitHub
             </a>
-          </p>
+          </div>
         </div>
       </footer>
     </div>
