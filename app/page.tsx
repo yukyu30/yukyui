@@ -2,86 +2,24 @@
 
 import * as React from "react"
 import Image from "next/image"
-import { Check, Copy, Terminal, Package, Palette, Grid3X3 } from "lucide-react"
+import { Check, Copy, Terminal, Package, Palette, Grid3X3, User, Search, ChevronRight, ChevronDown, Settings, Bell } from "lucide-react"
 
-// Component data
-const components = {
-  "Phase 1: 基礎コンポーネント": [
-    { name: "fb-button", description: "ボタン", variants: "variant, size" },
-    { name: "fb-card", description: "カード", variants: "elevation" },
-    { name: "fb-input", description: "テキスト入力", variants: "appearance, size" },
-    { name: "fb-label", description: "ラベル", variants: "-" },
-    { name: "fb-textarea", description: "テキストエリア", variants: "-" },
-    { name: "fb-text", description: "テキスト", variants: "level, density" },
-    { name: "fb-separator", description: "区切り線", variants: "orientation" },
-    { name: "fb-badge", description: "バッジ", variants: "appearance, color, size" },
-    { name: "fb-spinner", description: "スピナー", variants: "size, color" },
-    { name: "fb-skeleton", description: "スケルトン", variants: "shape" },
-    { name: "fb-kbd", description: "キーボード", variants: "size" },
-    { name: "fb-avatar", description: "アバター", variants: "size, shape" },
-    { name: "fb-aspect-ratio", description: "アスペクト比", variants: "-" },
-    { name: "fb-progress", description: "プログレスバー", variants: "size, color" },
-    { name: "fb-toggle", description: "トグル", variants: "appearance, size" },
-    { name: "fb-checkbox", description: "チェックボックス", variants: "size, color" },
-    { name: "fb-switch", description: "スイッチ", variants: "size, color" },
-    { name: "fb-radio-group", description: "ラジオグループ", variants: "size, color" },
-  ],
-  "Phase 2: オーバーレイ・ポップアップ系": [
-    { name: "fb-tooltip", description: "ツールチップ", variants: "-" },
-    { name: "fb-popover", description: "ポップオーバー", variants: "-" },
-    { name: "fb-dialog", description: "ダイアログ", variants: "-" },
-    { name: "fb-alert-dialog", description: "アラートダイアログ", variants: "-" },
-    { name: "fb-sheet", description: "シート", variants: "side" },
-    { name: "fb-drawer", description: "ドロワー", variants: "-" },
-    { name: "fb-dropdown-menu", description: "ドロップダウンメニュー", variants: "-" },
-    { name: "fb-context-menu", description: "コンテキストメニュー", variants: "-" },
-    { name: "fb-hover-card", description: "ホバーカード", variants: "-" },
-    { name: "fb-toast", description: "トースト", variants: "color" },
-    { name: "fb-sonner", description: "Sonner", variants: "-" },
-  ],
-  "Phase 3: ナビゲーション・構造系": [
-    { name: "fb-accordion", description: "アコーディオン", variants: "-" },
-    { name: "fb-collapsible", description: "折りたたみ", variants: "-" },
-    { name: "fb-tabs", description: "タブ", variants: "appearance" },
-    { name: "fb-toggle-group", description: "トグルグループ", variants: "appearance, size" },
-    { name: "fb-breadcrumb", description: "パンくずリスト", variants: "-" },
-    { name: "fb-pagination", description: "ページネーション", variants: "-" },
-    { name: "fb-navigation-menu", description: "ナビゲーションメニュー", variants: "-" },
-    { name: "fb-menubar", description: "メニューバー", variants: "-" },
-    { name: "fb-scroll-area", description: "スクロールエリア", variants: "-" },
-    { name: "fb-resizable", description: "リサイズ可能", variants: "-" },
-  ],
-  "Phase 4: フォーム・入力系": [
-    { name: "fb-alert", description: "アラート", variants: "color" },
-    { name: "fb-select", description: "セレクト", variants: "size" },
-    { name: "fb-native-select", description: "ネイティブセレクト", variants: "size" },
-    { name: "fb-command", description: "コマンド", variants: "-" },
-    { name: "fb-combobox", description: "コンボボックス", variants: "-" },
-    { name: "fb-slider", description: "スライダー", variants: "size, color" },
-    { name: "fb-input-otp", description: "OTP入力", variants: "-" },
-    { name: "fb-form", description: "フォーム", variants: "-" },
-    { name: "fb-field", description: "フィールド", variants: "-" },
-    { name: "fb-input-group", description: "インプットグループ", variants: "size" },
-    { name: "fb-button-group", description: "ボタングループ", variants: "orientation" },
-    { name: "fb-item", description: "アイテム", variants: "variant, size" },
-  ],
-  "Phase 5: データ表示・高度なコンポーネント": [
-    { name: "fb-table", description: "テーブル", variants: "-" },
-    { name: "fb-data-table", description: "データテーブル", variants: "-" },
-    { name: "fb-calendar", description: "カレンダー", variants: "-" },
-    { name: "fb-date-picker", description: "日付選択", variants: "-" },
-    { name: "fb-carousel", description: "カルーセル", variants: "-" },
-    { name: "fb-chart", description: "チャート", variants: "-" },
-    { name: "fb-empty", description: "空状態", variants: "size" },
-    { name: "fb-sidebar", description: "サイドバー", variants: "side, variant, collapsible" },
-  ],
-}
-
-const blocks = [
-  { name: "hello-world", description: "Hello World サンプル" },
-  { name: "example-form", description: "フォームサンプル" },
-  { name: "example-login", description: "ログインフォーム" },
-]
+// Import fly-by components
+import { FbButton } from "@/registry/fly-by/ui/fb-button"
+import { FbBadge } from "@/registry/fly-by/ui/fb-badge"
+import { FbCard, FbCardHeader, FbCardTitle, FbCardDescription, FbCardBody } from "@/registry/fly-by/ui/fb-card"
+import { FbInput } from "@/registry/fly-by/ui/fb-input"
+import { FbLabel } from "@/registry/fly-by/ui/fb-label"
+import { FbText } from "@/registry/fly-by/ui/fb-text"
+import { FbTextarea } from "@/registry/fly-by/ui/fb-textarea"
+import { FbSeparator } from "@/registry/fly-by/ui/fb-separator"
+import { FbSpinner } from "@/registry/fly-by/ui/fb-spinner"
+import { FbSkeleton } from "@/registry/fly-by/ui/fb-skeleton"
+import { FbKbd } from "@/registry/fly-by/ui/fb-kbd"
+import { FbProgress } from "@/registry/fly-by/ui/fb-progress"
+import { FbCheckbox } from "@/registry/fly-by/ui/fb-checkbox"
+import { FbSwitch } from "@/registry/fly-by/ui/fb-switch"
+import { FbAlert, FbAlertTitle, FbAlertDescription } from "@/registry/fly-by/ui/fb-alert"
 
 const BASE_URL = "https://yukyui.vercel.app/r"
 
@@ -109,7 +47,7 @@ function CopyButton({ text }: { text: string }) {
   )
 }
 
-function CodeBlock({ code, language = "bash" }: { code: string; language?: string }) {
+function CodeBlock({ code }: { code: string }) {
   return (
     <div className="relative group">
       <pre className="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm">
@@ -122,31 +60,652 @@ function CodeBlock({ code, language = "bash" }: { code: string; language?: strin
   )
 }
 
-function ComponentRow({ name, description, variants }: { name: string; description: string; variants: string }) {
+interface ComponentShowcaseProps {
+  name: string
+  description: string
+  children: React.ReactNode
+}
+
+function ComponentShowcase({ name, description, children }: ComponentShowcaseProps) {
   const command = `npx shadcn@latest add "${BASE_URL}/${name}.json"`
 
   return (
-    <tr className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
-      <td className="py-3 px-4">
-        <code className="text-sm font-mono text-[#002CED] dark:text-blue-400">{name}</code>
-      </td>
-      <td className="py-3 px-4 text-gray-600 dark:text-gray-400">{description}</td>
-      <td className="py-3 px-4 text-gray-500 dark:text-gray-500 text-sm">{variants}</td>
-      <td className="py-3 px-4">
-        <div className="flex items-center gap-2">
-          <code className="text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded font-mono truncate max-w-[300px]">
-            {command}
-          </code>
+    <FbCard elevation={1} className="overflow-hidden">
+      <FbCardHeader className="pb-2">
+        <div className="flex items-center justify-between">
+          <FbCardTitle className="text-base font-mono text-[#002CED]">{name}</FbCardTitle>
           <CopyButton text={command} />
         </div>
-      </td>
-    </tr>
+        <FbCardDescription>{description}</FbCardDescription>
+      </FbCardHeader>
+      <FbCardBody className="bg-gray-50 dark:bg-gray-800/50 border-t border-b border-gray-100 dark:border-gray-700 py-8 flex items-center justify-center min-h-[120px]">
+        {children}
+      </FbCardBody>
+      <div className="px-4 py-2 bg-gray-900 text-gray-100 text-xs font-mono overflow-x-auto">
+        <code>npx shadcn@latest add &quot;{BASE_URL}/{name}.json&quot;</code>
+      </div>
+    </FbCard>
   )
 }
 
+// All components in a flat list
+const allComponents = [
+  {
+    name: "fb-button",
+    description: "ボタン",
+    preview: (
+      <div className="flex flex-wrap gap-2 items-center justify-center">
+        <FbButton appearance="solid" color="informative">Primary</FbButton>
+        <FbButton appearance="outlined" color="informative">Outlined</FbButton>
+        <FbButton appearance="flat" color="neutral">Flat</FbButton>
+      </div>
+    ),
+  },
+  {
+    name: "fb-card",
+    description: "カード",
+    preview: (
+      <FbCard elevation={2} className="w-48">
+        <FbCardBody className="text-center">
+          <FbText level="s">Card Content</FbText>
+        </FbCardBody>
+      </FbCard>
+    ),
+  },
+  {
+    name: "fb-input",
+    description: "テキスト入力",
+    preview: (
+      <div className="w-48">
+        <FbInput placeholder="入力してください" />
+      </div>
+    ),
+  },
+  {
+    name: "fb-label",
+    description: "ラベル",
+    preview: <FbLabel>ラベルテキスト</FbLabel>,
+  },
+  {
+    name: "fb-textarea",
+    description: "テキストエリア",
+    preview: <FbTextarea placeholder="テキストを入力..." className="w-48 h-20" />,
+  },
+  {
+    name: "fb-text",
+    description: "テキスト",
+    preview: (
+      <div className="space-y-1 text-center">
+        <FbText level="l" density="dense">Large Text</FbText>
+        <FbText level="m">Medium Text</FbText>
+        <FbText level="s" className="text-gray-500">Small Text</FbText>
+      </div>
+    ),
+  },
+  {
+    name: "fb-separator",
+    description: "区切り線",
+    preview: (
+      <div className="w-48 space-y-2">
+        <FbText level="s">Above</FbText>
+        <FbSeparator />
+        <FbText level="s">Below</FbText>
+      </div>
+    ),
+  },
+  {
+    name: "fb-badge",
+    description: "バッジ",
+    preview: (
+      <div className="flex flex-wrap gap-2 justify-center">
+        <FbBadge color="informative">New</FbBadge>
+        <FbBadge appearance="solid" color="positive">Success</FbBadge>
+        <FbBadge appearance="outlined" color="negative">Error</FbBadge>
+      </div>
+    ),
+  },
+  {
+    name: "fb-spinner",
+    description: "スピナー",
+    preview: (
+      <div className="flex gap-4 items-center">
+        <FbSpinner size="s" />
+        <FbSpinner size="m" />
+        <FbSpinner size="l" />
+      </div>
+    ),
+  },
+  {
+    name: "fb-skeleton",
+    description: "スケルトン",
+    preview: (
+      <div className="space-y-2 w-48">
+        <FbSkeleton className="h-4 w-full" />
+        <FbSkeleton className="h-4 w-3/4" />
+        <FbSkeleton className="h-4 w-1/2" />
+      </div>
+    ),
+  },
+  {
+    name: "fb-kbd",
+    description: "キーボード",
+    preview: (
+      <div className="flex gap-1 items-center">
+        <FbKbd>⌘</FbKbd>
+        <FbKbd>K</FbKbd>
+      </div>
+    ),
+  },
+  {
+    name: "fb-avatar",
+    description: "アバター",
+    preview: (
+      <div className="flex gap-2 items-center">
+        <div className="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center text-xs font-medium text-gray-600">U</div>
+        <div className="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center text-sm font-medium text-gray-600">YF</div>
+        <div className="h-12 w-12 rounded-full bg-gray-200 flex items-center justify-center text-base font-medium text-gray-600">FB</div>
+      </div>
+    ),
+  },
+  {
+    name: "fb-aspect-ratio",
+    description: "アスペクト比",
+    preview: (
+      <div className="w-32 bg-gray-100 dark:bg-gray-800 rounded overflow-hidden" style={{ aspectRatio: "16/9" }}>
+        <div className="w-full h-full flex items-center justify-center text-xs text-gray-500">16:9</div>
+      </div>
+    ),
+  },
+  {
+    name: "fb-progress",
+    description: "プログレスバー",
+    preview: (
+      <div className="w-48 space-y-2">
+        <FbProgress value={60} />
+        <FbProgress value={80} color="positive" />
+      </div>
+    ),
+  },
+  {
+    name: "fb-toggle",
+    description: "トグル",
+    preview: (
+      <div className="flex gap-2">
+        <button className="h-9 w-9 rounded-md flex items-center justify-center bg-gray-200 text-gray-900 font-bold">B</button>
+        <button className="h-9 w-9 rounded-md flex items-center justify-center bg-transparent hover:bg-gray-100 font-bold italic">I</button>
+      </div>
+    ),
+  },
+  {
+    name: "fb-checkbox",
+    description: "チェックボックス",
+    preview: (
+      <div className="flex gap-4 items-center">
+        <FbCheckbox />
+        <FbCheckbox defaultChecked />
+        <FbCheckbox defaultChecked color="positive" />
+      </div>
+    ),
+  },
+  {
+    name: "fb-switch",
+    description: "スイッチ",
+    preview: (
+      <div className="flex gap-4 items-center">
+        <FbSwitch />
+        <FbSwitch defaultChecked />
+        <FbSwitch defaultChecked color="positive" />
+      </div>
+    ),
+  },
+  {
+    name: "fb-radio-group",
+    description: "ラジオグループ",
+    preview: (
+      <div className="flex gap-4 items-center">
+        <div className="flex items-center gap-2">
+          <div className="h-4 w-4 rounded-full border-2 border-[#002CED] flex items-center justify-center">
+            <div className="h-2 w-2 rounded-full bg-[#002CED]" />
+          </div>
+          <span className="text-sm">Option 1</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="h-4 w-4 rounded-full border-2 border-gray-400" />
+          <span className="text-sm">Option 2</span>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "fb-tooltip",
+    description: "ツールチップ",
+    preview: <FbButton appearance="outlined" color="informative">Hover me</FbButton>,
+  },
+  {
+    name: "fb-popover",
+    description: "ポップオーバー",
+    preview: <FbButton appearance="outlined" color="informative">Open Popover</FbButton>,
+  },
+  {
+    name: "fb-dialog",
+    description: "ダイアログ",
+    preview: <FbButton appearance="outlined" color="informative">Open Dialog</FbButton>,
+  },
+  {
+    name: "fb-alert-dialog",
+    description: "アラートダイアログ",
+    preview: <FbButton appearance="outlined" color="negative">Delete</FbButton>,
+  },
+  {
+    name: "fb-sheet",
+    description: "シート",
+    preview: <FbButton appearance="outlined" color="informative">Open Sheet</FbButton>,
+  },
+  {
+    name: "fb-drawer",
+    description: "ドロワー",
+    preview: <FbButton appearance="outlined" color="informative">Open Drawer</FbButton>,
+  },
+  {
+    name: "fb-dropdown-menu",
+    description: "ドロップダウンメニュー",
+    preview: (
+      <FbButton appearance="flat" color="neutral">
+        <Settings className="h-4 w-4 mr-2" />
+        Menu
+        <ChevronDown className="h-4 w-4 ml-2" />
+      </FbButton>
+    ),
+  },
+  {
+    name: "fb-context-menu",
+    description: "コンテキストメニュー",
+    preview: (
+      <div className="border-2 border-dashed border-gray-300 rounded-lg px-6 py-4 text-sm text-gray-500">
+        Right click here
+      </div>
+    ),
+  },
+  {
+    name: "fb-hover-card",
+    description: "ホバーカード",
+    preview: <span className="text-[#002CED] underline cursor-pointer">@username</span>,
+  },
+  {
+    name: "fb-toast",
+    description: "トースト",
+    preview: (
+      <FbButton appearance="solid" color="informative">
+        <Bell className="h-4 w-4 mr-2" />
+        Show Toast
+      </FbButton>
+    ),
+  },
+  {
+    name: "fb-sonner",
+    description: "Sonner",
+    preview: <FbButton appearance="solid" color="positive">Show Notification</FbButton>,
+  },
+  {
+    name: "fb-accordion",
+    description: "アコーディオン",
+    preview: (
+      <div className="w-48 border rounded-lg">
+        <div className="flex items-center justify-between px-4 py-3 border-b">
+          <span className="text-sm font-medium">Section 1</span>
+          <ChevronDown className="h-4 w-4" />
+        </div>
+        <div className="px-4 py-3 text-sm text-gray-600">Content here</div>
+      </div>
+    ),
+  },
+  {
+    name: "fb-collapsible",
+    description: "折りたたみ",
+    preview: (
+      <div className="flex items-center gap-2">
+        <ChevronRight className="h-4 w-4" />
+        <span>Collapsible Section</span>
+      </div>
+    ),
+  },
+  {
+    name: "fb-tabs",
+    description: "タブ",
+    preview: (
+      <div className="w-48">
+        <div className="flex border-b border-gray-200">
+          <button className="px-3 py-2 text-sm border-b-2 border-[#002CED] text-[#002CED]">Tab 1</button>
+          <button className="px-3 py-2 text-sm text-gray-600">Tab 2</button>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "fb-toggle-group",
+    description: "トグルグループ",
+    preview: (
+      <div className="flex">
+        <FbButton appearance="solid" color="informative" size="s" className="rounded-r-none">Left</FbButton>
+        <FbButton appearance="outlined" color="informative" size="s" className="rounded-none border-l-0">Center</FbButton>
+        <FbButton appearance="outlined" color="informative" size="s" className="rounded-l-none border-l-0">Right</FbButton>
+      </div>
+    ),
+  },
+  {
+    name: "fb-breadcrumb",
+    description: "パンくずリスト",
+    preview: (
+      <div className="flex items-center gap-2 text-sm">
+        <span className="text-gray-500">Home</span>
+        <ChevronRight className="h-3 w-3 text-gray-400" />
+        <span className="text-gray-500">Products</span>
+        <ChevronRight className="h-3 w-3 text-gray-400" />
+        <span className="text-[#002CED]">Detail</span>
+      </div>
+    ),
+  },
+  {
+    name: "fb-pagination",
+    description: "ページネーション",
+    preview: (
+      <div className="flex items-center gap-1">
+        <FbButton appearance="flat" color="neutral" size="s">←</FbButton>
+        <FbButton appearance="solid" color="informative" size="s">1</FbButton>
+        <FbButton appearance="flat" color="neutral" size="s">2</FbButton>
+        <FbButton appearance="flat" color="neutral" size="s">3</FbButton>
+        <FbButton appearance="flat" color="neutral" size="s">→</FbButton>
+      </div>
+    ),
+  },
+  {
+    name: "fb-navigation-menu",
+    description: "ナビゲーションメニュー",
+    preview: (
+      <div className="flex items-center gap-4 text-sm">
+        <span className="text-[#002CED] font-medium">Home</span>
+        <span className="text-gray-600">About</span>
+        <span className="text-gray-600">Products</span>
+      </div>
+    ),
+  },
+  {
+    name: "fb-menubar",
+    description: "メニューバー",
+    preview: (
+      <div className="flex items-center gap-4 px-3 py-1.5 bg-gray-100 dark:bg-gray-800 rounded text-sm">
+        <span>File</span>
+        <span>Edit</span>
+        <span>View</span>
+      </div>
+    ),
+  },
+  {
+    name: "fb-scroll-area",
+    description: "スクロールエリア",
+    preview: (
+      <div className="w-32 h-16 border rounded-lg overflow-hidden bg-white dark:bg-gray-900">
+        <div className="p-2 text-xs text-gray-500">Scrollable content area</div>
+      </div>
+    ),
+  },
+  {
+    name: "fb-resizable",
+    description: "リサイズ可能",
+    preview: (
+      <div className="flex w-48 h-12 border rounded-lg overflow-hidden">
+        <div className="flex-1 bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-xs">Panel 1</div>
+        <div className="w-1 bg-gray-300 cursor-col-resize" />
+        <div className="flex-1 bg-gray-50 dark:bg-gray-900 flex items-center justify-center text-xs">Panel 2</div>
+      </div>
+    ),
+  },
+  {
+    name: "fb-alert",
+    description: "アラート",
+    preview: (
+      <FbAlert color="informative" className="w-48">
+        <FbAlertTitle>Info</FbAlertTitle>
+        <FbAlertDescription>Alert message</FbAlertDescription>
+      </FbAlert>
+    ),
+  },
+  {
+    name: "fb-select",
+    description: "セレクト",
+    preview: (
+      <FbButton appearance="outlined" color="neutral" className="w-36 justify-between">
+        Select option
+        <ChevronDown className="h-4 w-4" />
+      </FbButton>
+    ),
+  },
+  {
+    name: "fb-native-select",
+    description: "ネイティブセレクト",
+    preview: (
+      <select className="w-36 px-3 py-2 border rounded-lg text-sm bg-white dark:bg-gray-900">
+        <option>Option 1</option>
+        <option>Option 2</option>
+      </select>
+    ),
+  },
+  {
+    name: "fb-command",
+    description: "コマンド",
+    preview: (
+      <div className="flex items-center gap-2 px-3 py-2 border rounded-lg w-48">
+        <Search className="h-4 w-4 text-gray-400" />
+        <span className="text-sm text-gray-500">Search...</span>
+        <FbKbd className="ml-auto">⌘K</FbKbd>
+      </div>
+    ),
+  },
+  {
+    name: "fb-combobox",
+    description: "コンボボックス",
+    preview: (
+      <FbButton appearance="outlined" color="neutral" className="w-36 justify-between">
+        Select...
+        <ChevronDown className="h-4 w-4" />
+      </FbButton>
+    ),
+  },
+  {
+    name: "fb-slider",
+    description: "スライダー",
+    preview: (
+      <div className="w-48">
+        <div className="relative h-1.5 bg-gray-200 rounded-full">
+          <div className="absolute h-full w-1/2 bg-gray-900 rounded-full" />
+          <div className="absolute top-1/2 left-1/2 -translate-y-1/2 h-4 w-4 bg-white border border-gray-200 rounded-full shadow" />
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "fb-input-otp",
+    description: "OTP入力",
+    preview: (
+      <div className="flex gap-2">
+        {[1, 2, 3, 4].map((i) => (
+          <div key={i} className="w-10 h-12 border-2 rounded-lg flex items-center justify-center text-lg font-mono">
+            {i === 1 ? "1" : ""}
+          </div>
+        ))}
+      </div>
+    ),
+  },
+  {
+    name: "fb-form",
+    description: "フォーム",
+    preview: (
+      <div className="space-y-2 w-40">
+        <FbLabel>Email</FbLabel>
+        <FbInput placeholder="email@example.com" size="s" />
+      </div>
+    ),
+  },
+  {
+    name: "fb-field",
+    description: "フィールド",
+    preview: (
+      <div className="space-y-1 w-40">
+        <FbLabel>Username</FbLabel>
+        <FbInput placeholder="username" size="s" />
+        <p className="text-xs text-gray-500">Enter your username</p>
+      </div>
+    ),
+  },
+  {
+    name: "fb-input-group",
+    description: "インプットグループ",
+    preview: (
+      <div className="flex w-48">
+        <span className="px-3 py-2 bg-gray-100 border border-r-0 rounded-l-md text-sm">@</span>
+        <FbInput placeholder="username" className="rounded-l-none" />
+      </div>
+    ),
+  },
+  {
+    name: "fb-button-group",
+    description: "ボタングループ",
+    preview: (
+      <div className="flex">
+        <FbButton appearance="outlined" color="neutral" size="s" className="rounded-r-none">Save</FbButton>
+        <FbButton appearance="outlined" color="neutral" size="s" className="rounded-l-none border-l-0">
+          <ChevronDown className="h-4 w-4" />
+        </FbButton>
+      </div>
+    ),
+  },
+  {
+    name: "fb-item",
+    description: "アイテム",
+    preview: (
+      <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg cursor-pointer w-40">
+        <User className="h-4 w-4 text-gray-500" />
+        <span className="text-sm">Profile</span>
+      </div>
+    ),
+  },
+  {
+    name: "fb-table",
+    description: "テーブル",
+    preview: (
+      <table className="w-48 text-sm">
+        <thead>
+          <tr className="border-b">
+            <th className="text-left py-1 px-2">Name</th>
+            <th className="text-left py-1 px-2">Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="py-1 px-2">John</td>
+            <td className="py-1 px-2">Admin</td>
+          </tr>
+        </tbody>
+      </table>
+    ),
+  },
+  {
+    name: "fb-data-table",
+    description: "データテーブル",
+    preview: (
+      <div className="w-48 text-xs">
+        <div className="flex items-center gap-2 mb-2">
+          <FbInput placeholder="Filter..." size="s" className="h-7" />
+        </div>
+        <div className="border rounded text-center py-2 text-gray-500">Table</div>
+      </div>
+    ),
+  },
+  {
+    name: "fb-calendar",
+    description: "カレンダー",
+    preview: (
+      <div className="p-2 border rounded-lg">
+        <div className="text-center text-sm font-medium mb-2">December 2024</div>
+        <div className="grid grid-cols-7 gap-1 text-xs text-center">
+          {["S", "M", "T", "W", "T", "F", "S"].map((d, i) => (
+            <div key={i} className="text-gray-400">{d}</div>
+          ))}
+          {[...Array(31)].map((_, i) => (
+            <div
+              key={i}
+              className={`py-0.5 rounded ${i === 14 ? "bg-[#002CED] text-white" : ""}`}
+            >
+              {i + 1}
+            </div>
+          ))}
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "fb-date-picker",
+    description: "日付選択",
+    preview: (
+      <FbButton appearance="outlined" color="neutral" className="w-40 justify-start">
+        📅 Pick a date
+      </FbButton>
+    ),
+  },
+  {
+    name: "fb-carousel",
+    description: "カルーセル",
+    preview: (
+      <div className="flex items-center gap-2">
+        <FbButton appearance="flat" color="neutral" size="s">←</FbButton>
+        <div className="w-24 h-16 bg-gray-100 dark:bg-gray-800 rounded flex items-center justify-center text-xs">Slide 1</div>
+        <FbButton appearance="flat" color="neutral" size="s">→</FbButton>
+      </div>
+    ),
+  },
+  {
+    name: "fb-chart",
+    description: "チャート",
+    preview: (
+      <div className="flex items-end gap-1 h-16">
+        {[40, 60, 30, 80, 50, 70].map((h, i) => (
+          <div
+            key={i}
+            className="w-4 bg-[#002CED] rounded-t"
+            style={{ height: `${h}%` }}
+          />
+        ))}
+      </div>
+    ),
+  },
+  {
+    name: "fb-empty",
+    description: "空状態",
+    preview: (
+      <div className="text-center py-4">
+        <div className="text-3xl mb-2">📭</div>
+        <p className="text-sm text-gray-500">No data</p>
+      </div>
+    ),
+  },
+  {
+    name: "fb-sidebar",
+    description: "サイドバー",
+    preview: (
+      <div className="w-32 p-2 bg-gray-100 dark:bg-gray-800 rounded-lg space-y-1">
+        <div className="flex items-center gap-2 px-2 py-1 bg-[#002CED] text-white rounded text-xs">
+          <span>🏠</span> Home
+        </div>
+        <div className="flex items-center gap-2 px-2 py-1 text-gray-600 text-xs">
+          <span>⚙️</span> Settings
+        </div>
+      </div>
+    ),
+  },
+]
+
 export default function Home() {
-  const totalComponents = Object.values(components).flat().length
-  const [activeSection, setActiveSection] = React.useState<string | null>(null)
+  const totalComponents = allComponents.length
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950">
@@ -213,7 +772,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Usage */}
+        {/* Usage - Side by side */}
         <section className="py-12 border-t border-gray-200 dark:border-gray-800" id="usage">
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
             <Terminal className="h-6 w-6" />
@@ -255,116 +814,31 @@ export default function Home() {
                 code={`import { FbButton } from "@/components/ui/fb-button"
 
 <FbButton>Click me</FbButton>`}
-                language="tsx"
               />
             </div>
           </div>
-
-          <div className="mt-8 p-6 bg-gray-50 dark:bg-gray-900 rounded-xl">
-            <h3 className="font-semibold mb-4">複数コンポーネントを一括追加</h3>
-            <CodeBlock
-              code={`npx shadcn@latest add "${BASE_URL}/fb-button.json" "${BASE_URL}/fb-card.json" "${BASE_URL}/fb-input.json"`}
-            />
-          </div>
         </section>
 
-        {/* Component List */}
+        {/* Component Showcase - Flat grid */}
         <section className="py-12 border-t border-gray-200 dark:border-gray-800" id="components">
-          <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+          <h2 className="text-2xl font-bold mb-8 flex items-center gap-2">
             <Package className="h-6 w-6" />
             コンポーネント一覧
+            <span className="ml-2 text-sm font-normal text-gray-500">
+              ({totalComponents} components)
+            </span>
           </h2>
 
-          {/* Navigation */}
-          <div className="flex flex-wrap gap-2 mb-8">
-            {Object.keys(components).map((phase) => (
-              <button
-                key={phase}
-                onClick={() => {
-                  const el = document.getElementById(phase.replace(/\s/g, "-"))
-                  el?.scrollIntoView({ behavior: "smooth" })
-                  setActiveSection(phase)
-                }}
-                className={`px-4 py-2 rounded-full text-sm transition-colors ${
-                  activeSection === phase
-                    ? "bg-[#002CED] text-white"
-                    : "bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
-                }`}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {allComponents.map((component) => (
+              <ComponentShowcase
+                key={component.name}
+                name={component.name}
+                description={component.description}
               >
-                {phase.split(":")[0]}
-              </button>
+                {component.preview}
+              </ComponentShowcase>
             ))}
-          </div>
-
-          {/* Tables */}
-          {Object.entries(components).map(([phase, items]) => (
-            <div key={phase} id={phase.replace(/\s/g, "-")} className="mb-12">
-              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">
-                {phase}
-                <span className="ml-2 text-sm font-normal text-gray-500">
-                  ({items.length} components)
-                </span>
-              </h3>
-              <div className="overflow-x-auto border border-gray-200 dark:border-gray-700 rounded-xl">
-                <table className="w-full">
-                  <thead className="bg-gray-50 dark:bg-gray-800/50">
-                    <tr className="text-left text-sm text-gray-600 dark:text-gray-400">
-                      <th className="py-3 px-4 font-medium">コンポーネント</th>
-                      <th className="py-3 px-4 font-medium">説明</th>
-                      <th className="py-3 px-4 font-medium">バリアント</th>
-                      <th className="py-3 px-4 font-medium">インストールコマンド</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {items.map((item) => (
-                      <ComponentRow key={item.name} {...item} />
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          ))}
-        </section>
-
-        {/* Blocks */}
-        <section className="py-12 border-t border-gray-200 dark:border-gray-800" id="blocks">
-          <h2 className="text-2xl font-bold mb-6">ブロック</h2>
-          <div className="overflow-x-auto border border-gray-200 dark:border-gray-700 rounded-xl">
-            <table className="w-full">
-              <thead className="bg-gray-50 dark:bg-gray-800/50">
-                <tr className="text-left text-sm text-gray-600 dark:text-gray-400">
-                  <th className="py-3 px-4 font-medium">ブロック</th>
-                  <th className="py-3 px-4 font-medium">説明</th>
-                  <th className="py-3 px-4 font-medium">インストールコマンド</th>
-                </tr>
-              </thead>
-              <tbody>
-                {blocks.map((block) => {
-                  const command = `npx shadcn@latest add "${BASE_URL}/${block.name}.json"`
-                  return (
-                    <tr
-                      key={block.name}
-                      className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
-                    >
-                      <td className="py-3 px-4">
-                        <code className="text-sm font-mono text-[#002CED] dark:text-blue-400">
-                          {block.name}
-                        </code>
-                      </td>
-                      <td className="py-3 px-4 text-gray-600 dark:text-gray-400">{block.description}</td>
-                      <td className="py-3 px-4">
-                        <div className="flex items-center gap-2">
-                          <code className="text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded font-mono truncate max-w-[300px]">
-                            {command}
-                          </code>
-                          <CopyButton text={command} />
-                        </div>
-                      </td>
-                    </tr>
-                  )
-                })}
-              </tbody>
-            </table>
           </div>
         </section>
 
@@ -389,7 +863,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[#002CED]">•</span>
-                  <span><strong>data-slot属性:</strong> <code className="bg-gray-100 dark:bg-gray-800 px-1 rounded">data-slot="fb-{"{component}"}"</code></span>
+                  <span><strong>data-slot属性:</strong> <code className="bg-gray-100 dark:bg-gray-800 px-1 rounded">data-slot=&quot;fb-{"{component}"}&quot;</code></span>
                 </li>
               </ul>
             </div>
