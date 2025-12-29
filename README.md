@@ -1,6 +1,6 @@
 # fly-by Design System
 
-Inhouse をリスペクトした独自デザインシステム。Yukyu Flavor（鮮やかな青 #002CED）を基調とする shadcn/ui 互換のコンポーネントライブラリ。
+Yukyu Flavor（鮮やかな青 #002CED）を基調とする shadcn/ui 互換のコンポーネントライブラリ。
 
 ## Usage / 使い方
 
