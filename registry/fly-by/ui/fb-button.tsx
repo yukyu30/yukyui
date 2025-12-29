@@ -104,7 +104,7 @@ function FbButton({
       className={cn(fbButtonVariants({ appearance, color, size, width, className }))}
       {...props}
     >
-      <span className="_body">{children}</span>
+      {children}
     </Comp>
   )
 }
