@@ -512,20 +512,20 @@ const sidebarMenuButtonVariants = cva(
   "peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm outline-none ring-gray-400 transition-[width,height,padding] hover:bg-gray-100 hover:text-gray-900 focus-visible:ring-2 active:bg-gray-100 active:text-gray-900 disabled:pointer-events-none disabled:opacity-50 group-has-[[data-sidebar=menu-action]]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-gray-100 data-[active=true]:font-medium data-[active=true]:text-gray-900 data-[state=open]:hover:bg-gray-100 data-[state=open]:hover:text-gray-900 group-data-[collapsible=icon]:!size-8 group-data-[collapsible=icon]:!p-2 dark:ring-gray-500 dark:hover:bg-gray-800 dark:hover:text-gray-100 dark:active:bg-gray-800 dark:active:text-gray-100 dark:data-[active=true]:bg-gray-800 dark:data-[active=true]:text-gray-100 dark:data-[state=open]:hover:bg-gray-800 dark:data-[state=open]:hover:text-gray-100 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0",
   {
     variants: {
-      variant: {
-        default: "hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-800 dark:hover:text-gray-100",
-        outline:
-          "bg-white shadow-[0_0_0_1px_hsl(var(--sidebar-border))] hover:bg-gray-100 hover:text-gray-900 hover:shadow-[0_0_0_1px_hsl(var(--sidebar-accent))] dark:bg-gray-900 dark:hover:bg-gray-800 dark:hover:text-gray-100",
+      appearance: {
+        default: "-appearance-default hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-800 dark:hover:text-gray-100",
+        outlined:
+          "-appearance-outlined bg-white shadow-[0_0_0_1px_hsl(var(--sidebar-border))] hover:bg-gray-100 hover:text-gray-900 hover:shadow-[0_0_0_1px_hsl(var(--sidebar-accent))] dark:bg-gray-900 dark:hover:bg-gray-800 dark:hover:text-gray-100",
       },
       size: {
-        default: "h-8 text-sm",
-        sm: "h-7 text-xs",
-        lg: "h-12 text-sm group-data-[collapsible=icon]:!p-0",
+        m: "-size-m h-8 text-sm",
+        s: "-size-s h-7 text-xs",
+        l: "-size-l h-12 text-sm group-data-[collapsible=icon]:!p-0",
       },
     },
     defaultVariants: {
-      variant: "default",
-      size: "default",
+      appearance: "default",
+      size: "m",
     },
   }
 )
@@ -533,8 +533,8 @@ const sidebarMenuButtonVariants = cva(
 function FbSidebarMenuButton({
   asChild = false,
   isActive = false,
-  variant = "default",
-  size = "default",
+  appearance = "default",
+  size = "m",
   tooltip,
   className,
   ...props
@@ -552,7 +552,7 @@ function FbSidebarMenuButton({
       data-sidebar="menu-button"
       data-size={size}
       data-active={isActive}
-      className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
+      className={cn(sidebarMenuButtonVariants({ appearance, size }), className)}
       {...props}
     />
   )

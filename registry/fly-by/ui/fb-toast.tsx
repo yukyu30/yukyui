@@ -47,14 +47,14 @@ const fbToastVariants = cva(
   {
     variants: {
       color: {
-        default: "-color-default border-gray-200 bg-white text-gray-900 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100",
+        neutral: "-color-neutral border-gray-200 bg-white text-gray-900 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100",
         informative: "-color-informative border-[#002CED] bg-[#e6ebfd] text-[#002CED] dark:border-[#3361ef] dark:bg-[#001049] dark:text-[#3361ef]",
         positive: "-color-positive border-green-500 bg-green-50 text-green-700 dark:border-green-600 dark:bg-green-900 dark:text-green-300",
         negative: "-color-negative border-red-500 bg-red-50 text-red-700 dark:border-red-600 dark:bg-red-900 dark:text-red-300",
       },
     },
     defaultVariants: {
-      color: "default",
+      color: "neutral",
     },
   }
 )
