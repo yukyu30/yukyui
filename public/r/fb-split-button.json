@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fb-split-button",
+  "title": "Split Button",
+  "description": "fly-byデザインシステムのSplit Buttonコンポーネント。メインアクションとドロップダウンメニューを組み合わせたボタン。",
+  "dependencies": [
+    "lucide-react",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "fb-button",
+    "fb-dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/fly-by/ui/fb-split-button.tsx",
+      "content": "import * as React from \"react\"\nimport { ChevronDown } from \"lucide-react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\nimport { FbButton, type FbButtonProps } from \"./fb-button\"\nimport {\n  FbDropdownMenu,\n  FbDropdownMenuContent,\n  FbDropdownMenuTrigger,\n} from \"./fb-dropdown-menu\"\n\n/**\n * fly-by Split Button\n *\n * メインアクションとドロップダウンメニューを組み合わせたボタン。\n *\n * クラス構造: fb-split-button\n *\n * @example\n * <FbSplitButton\n *   appearance=\"solid\"\n *   color=\"informative\"\n *   size=\"m\"\n *   onAction={() => console.log('保存')}\n * >\n *   <FbSplitButtonLabel>保存</FbSplitButtonLabel>\n *   <FbSplitButtonMenu>\n *     <FbDropdownMenuItem onSelect={() => console.log('保存して閉じる')}>\n *       保存して閉じる\n *     </FbDropdownMenuItem>\n *     <FbDropdownMenuItem onSelect={() => console.log('別名で保存')}>\n *       別名で保存\n *     </FbDropdownMenuItem>\n *   </FbSplitButtonMenu>\n * </FbSplitButton>\n */\n\ninterface FbSplitButtonContextValue {\n  appearance?: FbButtonProps[\"appearance\"]\n  color?: FbButtonProps[\"color\"]\n  size?: FbButtonProps[\"size\"]\n  onAction?: () => void\n}\n\nconst FbSplitButtonContext = React.createContext<FbSplitButtonContextValue>({})\n\ninterface FbSplitButtonProps\n  extends React.HTMLAttributes<HTMLDivElement>,\n    Pick<FbButtonProps, \"appearance\" | \"color\" | \"size\"> {\n  /**\n   * メインボタンのクリックハンドラー\n   */\n  onAction?: () => void\n  /**\n   * ドロップダウンメニューの位置\n   * @default \"bottom-end\"\n   */\n  align?: \"start\" | \"center\" | \"end\"\n}\n\nfunction FbSplitButton({\n  className,\n  appearance = \"solid\",\n  color = \"informative\",\n  size = \"m\",\n  onAction,\n  align = \"end\",\n  children,\n  ...props\n}: FbSplitButtonProps) {\n  const [label, menu] = React.Children.toArray(children)\n\n  return (\n    <FbSplitButtonContext.Provider value={{ appearance, color, size, onAction }}>\n      <div\n        data-slot=\"fb-split-button\"\n        className={cn(\"fb-split-button inline-flex\", className)}\n        {...props}\n      >\n        <FbDropdownMenu>\n          <div className=\"inline-flex\">\n            {label}\n            <FbDropdownMenuTrigger asChild>\n              <FbButton\n                appearance={appearance}\n                color={color}\n                size={size}\n                className=\"rounded-l-none border-l border-white/20 px-2\"\n                leadingIcon={<ChevronDown className=\"h-4 w-4\" />}\n              />\n            </FbDropdownMenuTrigger>\n          </div>\n          <FbDropdownMenuContent align={align}>{menu}</FbDropdownMenuContent>\n        </FbDropdownMenu>\n      </div>\n    </FbSplitButtonContext.Provider>\n  )\n}\n\ninterface FbSplitButtonLabelProps extends React.HTMLAttributes<HTMLButtonElement> {\n  disabled?: boolean\n}\n\nfunction FbSplitButtonLabel({ disabled, ...props }: FbSplitButtonLabelProps) {\n  const { appearance, color, size, onAction } = React.useContext(FbSplitButtonContext)\n\n  return (\n    <FbButton\n      appearance={appearance}\n      color={color}\n      size={size}\n      onClick={onAction}\n      disabled={disabled}\n      className=\"rounded-r-none\"\n      {...props}\n    />\n  )\n}\n\ninterface FbSplitButtonMenuProps extends React.HTMLAttributes<HTMLDivElement> {}\n\nfunction FbSplitButtonMenu({ children }: FbSplitButtonMenuProps) {\n  return <>{children}</>\n}\n\nexport { FbSplitButton, FbSplitButtonLabel, FbSplitButtonMenu }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

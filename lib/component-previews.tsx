@@ -637,6 +637,16 @@ export const componentPreviews: Record<string, React.ReactNode> = {
       </button>
     </div>
   ),
+  'fb-split-button': (
+    <div className="inline-flex">
+      <button className="fb-button -appearance-solid -color-informative -size-m inline-flex items-center justify-center gap-2 rounded-l-md rounded-r-none text-sm font-medium h-9 px-4 bg-[#002CED] text-white hover:bg-[#0025c4]">
+        保存
+      </button>
+      <button className="fb-button -appearance-solid -color-informative -size-m inline-flex items-center justify-center gap-2 rounded-r-md rounded-l-none text-sm font-medium h-9 px-2 bg-[#002CED] text-white hover:bg-[#0025c4] border-l border-white/20">
+        <ChevronDown className="h-4 w-4" />
+      </button>
+    </div>
+  ),
   'fb-data-table': (
     <div className="w-80 border rounded-lg">
       <div className="p-3 border-b">

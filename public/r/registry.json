@@ -684,6 +684,20 @@
       ]
     },
     {
+      "name": "fb-split-button",
+      "type": "registry:ui",
+      "title": "Split Button",
+      "description": "fly-byデザインシステムのSplit Buttonコンポーネント。メインアクションとドロップダウンメニューを組み合わせたボタン。",
+      "dependencies": ["lucide-react", "class-variance-authority"],
+      "registryDependencies": ["fb-button", "fb-dropdown-menu"],
+      "files": [
+        {
+          "path": "registry/fly-by/ui/fb-split-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "fb-item",
       "type": "registry:ui",
       "title": "Item",

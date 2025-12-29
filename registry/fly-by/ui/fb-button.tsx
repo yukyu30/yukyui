@@ -84,6 +84,24 @@ export interface FbButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "color">,
     VariantProps<typeof fbButtonVariants> {
   asChild?: boolean
+  /**
+   * 先頭に表示するアイコン要素（Lucide Reactなど）
+   */
+  leadingIcon?: React.ReactNode
+  /**
+   * 末尾に表示するアイコン要素（Lucide Reactなど）
+   */
+  trailingIcon?: React.ReactNode
+  /**
+   * アイコン要素（後方互換性のため）
+   * @deprecated leadingIcon または trailingIcon を使用してください
+   */
+  icon?: React.ReactNode
+  /**
+   * アイコンの位置（後方互換性のため）
+   * @deprecated leadingIcon または trailingIcon を使用してください
+   */
+  iconPosition?: "left" | "right"
 }
 
 function FbButton({
@@ -93,18 +111,32 @@ function FbButton({
   size,
   width,
   asChild = false,
+  leadingIcon,
+  trailingIcon,
+  icon,
+  iconPosition = "left",
   children,
   ...props
 }: FbButtonProps) {
   const Comp = asChild ? Slot : "button"
 
+  // 後方互換性のため、iconとiconPositionをleadingIcon/trailingIconに変換
+  const leading = leadingIcon || (icon && iconPosition === "left" ? icon : undefined)
+  const trailing = trailingIcon || (icon && iconPosition === "right" ? icon : undefined)
+
+  // アイコンのみの場合、正方形にする
+  const isIconOnly = (leading || trailing) && !children
+  const iconOnlyClass = isIconOnly ? "aspect-square p-0" : ""
+
   return (
     <Comp
       data-slot="fb-button"
-      className={cn(fbButtonVariants({ appearance, color, size, width, className }))}
+      className={cn(fbButtonVariants({ appearance, color, size, width, className }), iconOnlyClass)}
       {...props}
     >
+      {leading}
       {children}
+      {trailing}
     </Comp>
   )
 }
